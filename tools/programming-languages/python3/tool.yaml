@@ -1,0 +1,169 @@
+# Python 3 Development Environment
+name: python3
+category: programming-language
+description: "Python programming language - the most popular language for AI/ML, web development, and automation"
+version: "3.12"
+latest_version: "3.12"
+homepage: "https://www.python.org/"
+documentation: "https://docs.python.org/"
+license: "PSF License"
+author: "Python Software Foundation"
+
+# Tags for categorization and search
+tags:
+  - programming-language
+  - python
+  - data-science
+  - ai-ml
+  - web-development
+  - automation
+  - backend
+
+# Supported operating systems
+supported_os:
+  - linux
+  - macos
+  - windows
+  - all
+
+# Installation sources (ordered by priority)
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: python3 python3-pip python3-dev python3-venv
+    description: "System package manager for Debian/Ubuntu"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: python3
+    description: "Homebrew package manager for macOS"
+    priority: 1
+
+  - type: curl
+    os: [linux, macos, windows]
+    url: "https://www.python.org/ftp/python/3.12.0/python-3.12.0-{os}-{arch}.{ext}"
+    command: |
+      # Linux: Deadsnakes PPA
+      sudo add-apt-repository ppa:deadsnakes/ppa
+      sudo apt update
+      sudo apt install -y python3.12 python3.12-pip python3.12-dev python3.12-venv
+      
+      # macOS: Download official installer
+      curl -O https://www.python.org/ftp/python/3.12.0/python-3.12.0-macos11.pkg
+      sudo installer -pkg python-3.12.0-macos11.pkg -target /
+    description: "Direct download from python.org"
+    priority: 2
+
+  - type: manual
+    os: [all]
+    url: "https://www.python.org/downloads/"
+    description: "Manual installation from official website"
+    priority: 3
+
+# Dependencies
+dependencies:
+  - name: build-essential
+    version: ""
+    optional: false
+    os: [linux]
+    description: "Build tools required for compiling Python packages"
+
+  - name: curl
+    version: ""
+    optional: false
+    description: "Required for downloading packages"
+
+# Optional package managers
+optional_tools:
+  - name: poetry
+    description: "Python dependency management and packaging"
+    recommended: true
+  - name: pipenv
+    description: "Pipenv - Python Development Workflow for Humans"
+    recommended: false
+  - name: conda
+    description: "Conda package and environment manager"
+    recommended: false
+
+# Configuration files
+config_files:
+  - path: "~/.pip/pip.conf"
+    content: |
+      [global]
+      index-url = https://pypi.org/simple
+      trusted-host = pypi.org
+
+# Environment variables to set
+environment_vars:
+  PATH: "$HOME/.local/bin:$PATH"
+  PYTHONIOENCODING: "UTF-8"
+  PIP_REQUIRE_VENV: "false"
+
+# Post-installation commands
+post_install:
+  - "pip3 install --upgrade pip setuptools wheel"
+  - "pip3 install --upgrade virtualenv"
+
+# Verification commands
+verify_commands:
+  - "python3 --version"
+  - "pip3 --version"
+
+# Popular packages (auto-install recommendation)
+popular_packages:
+  - name: numpy
+    description: "Numerical computing"
+    category: data-science
+    recommended: true
+  - name: pandas
+    description: "Data analysis and manipulation"
+    category: data-science
+    recommended: true
+  - name: requests
+    description: "HTTP requests"
+    category: web
+    recommended: true
+  - name: flask
+    description: "Web framework"
+    category: web
+    recommended: false
+  - name: django
+    description: "Full-stack web framework"
+    category: web
+    recommended: false
+
+# Integration tools
+integrations:
+  - name: vscode-python
+    description: "VS Code Python extension"
+    auto_install: true
+  - name: jupyter
+    description: "Jupyter Notebooks"
+    auto_install: true
+
+# Compatibility information
+compatible_with:
+  - nodejs
+  - docker
+  - git
+  - postgresql
+  - mongodb
+
+# System requirements
+system_requirements:
+  disk_space: "500MB"
+  memory: "256MB minimum"
+  architecture: ["amd64", "arm64"]
+
+# Performance optimization tips
+optimization_tips:
+  - Use uv instead of pip for faster package installation
+  - Enable pip cache
+  - Use virtual environments for project isolation
+
+# Security notes
+security_notes:
+  - Use virtual environments
+  - Keep packages updated
+  - Use pip-audit to check for vulnerabilities

@@ -1,0 +1,126 @@
+# Node.js JavaScript Runtime
+name: nodejs
+category: programming-language
+description: "Node.js JavaScript runtime - for building scalable network applications"
+version: "20"
+lts_version: "20"
+latest_version: "21"
+homepage: "https://nodejs.org/"
+documentation: "https://nodejs.org/docs/latest/api/"
+license: "MIT"
+author: "Node.js Foundation"
+
+tags:
+  - javascript
+  - nodejs
+  - web-development
+  - backend
+  - frontend
+  - full-stack
+  - serverless
+
+supported_os:
+  - linux
+  - macos
+  - windows
+  - all
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: nodejs npm
+    description: "Node.js from NodeSource repository"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: node
+    description: "Homebrew package manager"
+    priority: 1
+
+  - type: nvm
+    os: [linux, macos]
+    description: "Node Version Manager (NVM) - recommended"
+    priority: 2
+    command: |
+      curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+      nvm install 20
+      nvm use 20
+
+dependencies:
+  - name: git
+    optional: true
+
+optional_tools:
+  - name: yarn
+    description: "Yarn package manager"
+    recommended: true
+  - name: pnpm
+    description: "Fast, disk space efficient package manager"
+    recommended: true
+  - name: typescript
+    description: "TypeScript language"
+    recommended: true
+
+config_files:
+  - path: "~/.npmrc"
+    content: |
+      prefix=${HOME}/.npm-global
+      init-author-name=Your Name
+      init-author-email=your@email.com
+      init-license=MIT
+
+environment_vars:
+  PATH: "$HOME/.npm-global/bin:$PATH"
+  NODE_ENV: "development"
+
+post_install:
+  - "npm install -g npm@latest"
+  - "npm install -g yarn pnpm typescript"
+
+verify_commands:
+  - "node --version"
+  - "npm --version"
+
+popular_packages:
+  - name: express
+    description: "Web framework"
+    category: web
+    recommended: true
+  - name: react
+    description: "UI library"
+    category: frontend
+    recommended: true
+  - name: vue
+    description: "Progressive framework"
+    category: frontend
+    recommended: false
+  - name: nextjs
+    description: "React framework"
+    category: frontend
+    recommended: true
+
+integrations:
+  - name: vscode-eslint
+    description: "VS Code ESLint extension"
+    auto_install: true
+
+compatible_with:
+  - python3
+  - docker
+  - git
+  - postgresql
+  - mongodb
+  - redis
+
+system_requirements:
+  disk_space: "1GB"
+  memory: "512MB minimum"
+  architecture: ["amd64", "arm64"]
+
+optimization_tips:
+  - Use pnpm instead of npm for faster installs
+  - Enable npm cache
+  - Use corepack for package manager management

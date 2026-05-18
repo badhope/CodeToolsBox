@@ -1,0 +1,102 @@
+# Web Development Environment
+name: web-developer
+description: "Complete web development environment with frontend and backend tools"
+version: "1.0"
+category: environment-template
+author: "Global-Dev-Setup"
+
+# Core tools
+core_tools:
+  - name: git
+    required: true
+    description: "Version control"
+  - name: nodejs
+    required: true
+    description: "JavaScript runtime"
+  - name: python3
+    required: true
+    description: "Python backend"
+  - name: vscode
+    required: true
+    description: "Code editor"
+  - name: docker
+    required: true
+    description: "Container runtime"
+
+# Database tools
+database_tools:
+  - name: postgresql
+    required: false
+    default: true
+    description: "Primary database"
+  - name: redis
+    required: false
+    default: true
+    description: "Cache and session store"
+
+# Optional tools
+optional_tools:
+  - name: nginx
+    required: false
+    default: false
+    description: "Web server"
+  - name: mongodb
+    required: false
+    default: false
+    description: "NoSQL database"
+
+# Recommended extensions
+vscode_extensions:
+  - ms-python.python
+  - dbaeumer.vscode-eslint
+  - eamodio.gitlens
+  - ms-azuretools.vscode-docker
+  - esbenp.prettier-vscode
+  - bradlc.vscode-tailwindcss
+
+# Environment configuration
+env_config:
+  node_version: "20"
+  python_version: "3.12"
+  docker_enabled: true
+  database: "postgresql"
+
+# Quick start scripts
+quick_start:
+  - description: "Start development database"
+    command: "docker compose up -d"
+  - description: "Install npm dependencies"
+    command: "npm install"
+  - description: "Set up Python venv"
+    command: "python -m venv venv && source venv/bin/activate && pip install -r requirements.txt"
+
+# Project templates
+project_templates:
+  - name: react-node
+    description: "React frontend + Node backend"
+    url: "https://github.com/..."
+  - name: nextjs-fullstack
+    description: "Next.js full-stack app"
+    url: "https://github.com/..."
+  - name: flask-react
+    description: "Flask backend + React frontend"
+    url: "https://github.com/..."
+
+# Estimated setup time
+estimated_setup_time: "15-30 minutes"
+
+# System requirements
+system_requirements:
+  disk_space: "10GB minimum"
+  memory: "8GB recommended"
+  architecture: ["amd64", "arm64"]
+
+# Tags for classification
+tags:
+  - web-development
+  - full-stack
+  - javascript
+  - python
+  - react
+  - nodejs
+  - postgresql

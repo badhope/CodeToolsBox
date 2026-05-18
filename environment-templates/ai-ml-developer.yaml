@@ -1,0 +1,144 @@
+# AI/ML Development Environment
+name: ai-ml-developer
+description: "Complete AI and Machine Learning development environment"
+version: "1.0"
+category: environment-template
+author: "Global-Dev-Setup"
+
+# Core tools
+core_tools:
+  - name: git
+    required: true
+    description: "Version control"
+  - name: python3
+    required: true
+    description: "Python (required for ML)"
+  - name: vscode
+    required: true
+    description: "Code editor"
+  - name: docker
+    required: true
+    description: "Container runtime for ML"
+
+# ML specific tools
+ml_tools:
+  - name: poetry
+    required: false
+    default: true
+    description: "Python dependency management"
+  - name: conda
+    required: false
+    default: false
+    description: "Conda package manager"
+
+# AI/ML packages
+ml_packages:
+  - name: numpy
+    required: true
+    description: "Numerical computing"
+  - name: pandas
+    required: true
+    description: "Data analysis"
+  - name: matplotlib
+    required: false
+    default: true
+    description: "Visualization"
+  - name: scikit-learn
+    required: true
+    description: "Machine learning"
+  - name: pytorch
+    required: false
+    default: true
+    description: "Deep learning framework"
+  - name: tensorflow
+    required: false
+    default: false
+    description: "Deep learning framework"
+  - name: transformers
+    required: false
+    default: true
+    description: "Hugging Face transformers"
+  - name: jupyter
+    required: true
+    description: "Jupyter notebooks"
+
+# Databases for ML
+data_stores:
+  - name: postgresql
+    required: false
+    default: true
+    description: "Structured data storage"
+  - name: mongodb
+    required: false
+    default: false
+    description: "Unstructured data storage"
+
+# Optional tools
+optional_tools:
+  - name: mlflow
+    required: false
+    default: false
+    description: "ML experiment tracking"
+  - name: wandb
+    required: false
+    default: false
+    description: "Weights & Biases"
+
+# VS Code extensions
+vscode_extensions:
+  - ms-python.python
+  - ms-toolsai.jupyter
+  - eamodio.gitlens
+  - ms-azuretools.vscode-docker
+  - ms-toolsai.vscode-ai
+  - ms-toolsai.datawrangler
+
+# Environment configuration
+env_config:
+  python_version: "3.12"
+  ml_framework: "pytorch"
+  notebook_support: true
+  gpu_enabled: false
+  docker_enabled: true
+
+# Quick start
+quick_start:
+  - description: "Start Jupyter Lab"
+    command: "jupyter lab"
+  - description: "Create new ML project"
+    command: "cookiecutter https://github.com/drivendata/cookiecutter-data-science"
+  - description: "Set up MLflow"
+    command: "mlflow ui --host 0.0.0.0"
+
+# Project templates
+project_templates:
+  - name: pytorch-template
+    description: "PyTorch project template"
+    url: "https://github.com/..."
+  - name: ml-project-template
+    description: "General ML project template"
+    url: "https://github.com/..."
+  - name: huggingface-template
+    description: "Hugging Face project template"
+    url: "https://github.com/..."
+
+# Estimated setup time
+estimated_setup_time: "30-60 minutes"
+
+# System requirements
+system_requirements:
+  disk_space: "20GB minimum"
+  memory: "16GB recommended"
+  architecture: ["amd64", "arm64"]
+  gpu: "Optional (for CUDA/Metal)"
+
+# Tags
+tags:
+  - ai
+  - machine-learning
+  - deep-learning
+  - data-science
+  - pytorch
+  - tensorflow
+  - jupyter
+  - python

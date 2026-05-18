@@ -1,0 +1,94 @@
+# PostgreSQL Database
+name: postgresql
+category: database
+description: "PostgreSQL - world's most advanced open-source database"
+version: "16"
+latest_version: "16"
+homepage: "https://www.postgresql.org/"
+documentation: "https://www.postgresql.org/docs/"
+license: "PostgreSQL License"
+author: "PostgreSQL Global Development Group"
+
+tags:
+  - database
+  - postgresql
+  - sql
+  - relational-database
+  - data-storage
+
+supported_os:
+  - linux
+  - macos
+  - windows
+  - all
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: postgresql postgresql-contrib
+    description: "PostgreSQL from apt"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: postgresql@16
+    description: "Homebrew PostgreSQL"
+    priority: 1
+
+  - type: docker
+    os: [all]
+    description: "Run PostgreSQL in Docker container"
+    priority: 2
+    command: |
+      docker run --name postgres16 \
+        -e POSTGRES_PASSWORD=mysecretpassword \
+        -p 5432:5432 \
+        -d postgres:16
+
+dependencies:
+  - name: docker
+    optional: true
+
+optional_tools:
+  - name: pgadmin4
+    description: "PgAdmin 4 - PostgreSQL administration"
+    recommended: true
+  - name: dbeaver
+    description: "DBeaver universal database tool"
+    recommended: true
+
+config_files:
+  - path: "/etc/postgresql/16/main/postgresql.conf"
+    optional: true
+  - path: "/etc/postgresql/16/main/pg_hba.conf"
+    optional: true
+
+environment_vars:
+  PGDATA: "/var/lib/postgresql/16/main"
+  PGUSER: "postgres"
+  PGDATABASE: "postgres"
+
+post_install:
+  - "psql --version"
+  - "sudo -u postgres psql -c 'CREATE EXTENSION IF NOT EXISTS pgcrypto;'"
+
+verify_commands:
+  - "psql --version"
+  - "pg_isready"
+
+compatible_with:
+  - nodejs
+  - python3
+  - docker
+  - redis
+  - all-programming-languages
+
+system_requirements:
+  disk_space: "2GB minimum"
+  memory: "512MB minimum"
+  architecture: ["amd64", "arm64"]
+
+optimization_tips:
+  - Enable pg_stat_statements for query analysis
+  - Use connection pooling (pgBouncer)
+  - Regular VACUUM and ANALYZE

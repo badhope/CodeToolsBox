@@ -18,9 +18,15 @@
 - 📚 **Comprehensive Documentation** - Architecture guides and API docs
 - 🔄 **Auto-Update** - Keep all tools up to date
 - 🎯 **Category-Based** - Organized by functionality
+- 🧠 **Smart Recommendation Engine** - AI-driven tool suggestions based on your needs
+- 🤖 **External Agent API** - Full API for integration with external AI systems
+- 📋 **Environment Templates** - Pre-defined environments for common use cases
 - 🧩 **Plugin System** - Extend functionality easily
 - 📊 **Dependency Management** - Automatic dependency resolution
 - 💻 **CLI & Library** - Use as CLI tool or Python library
+- 🔌 **Intelligent Installer** - Automatically chooses best installation method
+- ✅ **Verification System** - Confirms tools are working correctly
+- 📦 **Compatibility Matrix** - Shows which tools work well together
 
 ## 📂 Directory Structure
 
@@ -30,6 +36,9 @@ Global-Dev-Setup/
 ├── CONTRIBUTING.md
 ├── LICENSE
 ├── setup.json
+├── install.sh                   # One-click installer (Linux/macOS)
+├── install.bat                  # One-click installer (Windows)
+├── bootstrap.py                 # Smart bootstrapper
 ├── global-dev-setup.py          # CLI entry point
 ├── global-dev-setup             # CLI launcher
 ├── core/                        # Core modules
@@ -42,10 +51,13 @@ Global-Dev-Setup/
 │   │   └── __init__.py
 │   ├── engine/                  # Core engine
 │   │   ├── engine.py
+│   │   ├── smart_recommender.py  # Intelligent recommendations
+│   │   ├── smart_installer.py    # Smart installer
 │   │   └── __init__.py
 │   ├── models/                  # Data models
 │   │   ├── models.py
 │   │   └── __init__.py
+│   ├── agent_interface.py      # External AI agent API
 │   └── utils/                   # Utilities
 │       ├── exceptions.py
 │       ├── logger.py
@@ -53,23 +65,42 @@ Global-Dev-Setup/
 ├── docs/
 │   ├── architecture/
 │   │   └── ARCHITECTURE.md     # System architecture
+│   ├── AGENT_API.md            # Agent integration guide
+│   ├── COMPATIBILITY.md        # Tool compatibility matrix
 │   ├── getting-started.md
 │   ├── installation-guide.md
 │   └── faq.md
-├── tools/                       # Tool definitions
+├── tools/                       # Tool definitions (YAML)
 │   ├── programming-languages/
+│   │   ├── python3/
+│   │   │   └── tool.yaml
+│   │   └── nodejs/
+│   │       └── tool.yaml
 │   ├── databases/
+│   │   └── postgresql/
+│   │       └── tool.yaml
 │   ├── devops/
+│   │   └── docker/
+│   │       └── tool.yaml
 │   ├── editors/
-│   ├── productivity/
-│   └── frameworks/
+│   │   └── vscode/
+│   │       └── tool.yaml
+│   └── productivity/
+│       └── git/
+│           └── tool.yaml
+├── environment-templates/       # Pre-defined environments
+│   ├── web-developer.yaml
+│   ├── ai-ml-developer.yaml
+│   ├── mobile-developer.yaml
+│   └── devops-engineer.yaml
 ├── scripts/                     # Installation scripts
 │   ├── install-all.sh
 │   ├── update-all.sh
 │   └── setup-basics.sh
 ├── examples/                    # Usage examples
 │   ├── usage_examples.py
-│   └── quick_start.py
+│   ├── quick_start.py
+│   └── agent_integration.py     # Agent API examples
 ├── tests/                       # Unit tests
 │   └── test_core.py
 └── config/                     # Configuration templates
@@ -108,17 +139,34 @@ The system is built with a modular, layered architecture:
 
 ## 🚀 Quick Start
 
-### 1. Clone and Setup
+### Option 1: One-Click Install
 
+**Linux/macOS:**
 ```bash
 git clone https://github.com/badhope/Global-Dev-Setup.git
 cd Global-Dev-Setup
+chmod +x install.sh
+./install.sh
 ```
 
-### 2. Use as CLI Tool
+**Windows:**
+```bash
+git clone https://github.com/badhope/Global-Dev-Setup.git
+cd Global-Dev-Setup
+install.bat
+```
+
+### Option 2: Smart Bootstrap
 
 ```bash
-# Install a tool
+# Auto-select tools based on your needs
+python3 bootstrap.py full-stack
+```
+
+### Option 3: Use as CLI Tool
+
+```bash
+# Install specific tools
 python3 global-dev-setup.py install python3 git docker
 
 # List installed tools
@@ -132,6 +180,31 @@ python3 global-dev-setup.py status
 
 # Search for tools
 python3 global-dev-setup.py search python
+
+# List templates
+python3 global-dev-setup.py templates
+```
+
+### Option 4: Use as External Agent
+
+See [AGENT_API.md](docs/AGENT_API.md) for integrating with external AI systems.
+
+```python
+from core.agent_interface import DevSetupAgent, AgentCommand
+
+agent = DevSetupAgent()
+
+# Get smart recommendations
+result = agent.execute_command(
+    AgentCommand.RECOMMEND_TOOLS,
+    {"style": "ai-ml"}
+)
+
+# Install tools
+result = agent.execute_command(
+    AgentCommand.INSTALL_MULTIPLE,
+    {"tools": ["git", "python3", "docker"]}
+)
 ```
 
 ### 3. Use as Python Library
@@ -259,6 +332,8 @@ except InstallationError as e:
 ## 📖 Documentation
 
 - [Architecture Guide](docs/architecture/ARCHITECTURE.md) - System architecture
+- [Agent API Guide](docs/AGENT_API.md) - Integrate with external AI
+- [Compatibility Matrix](docs/COMPATIBILITY.md) - Tool compatibility info
 - [Getting Started](docs/getting-started.md) - Begin your journey
 - [Installation Guide](docs/installation-guide.md) - Detailed setup
 - [FAQ](docs/faq.md) - Frequently asked questions
@@ -270,12 +345,65 @@ See `examples/` directory for complete examples:
 
 - `usage_examples.py` - Comprehensive API examples
 - `quick_start.py` - Quick start examples
+- `agent_integration.py` - External agent integration examples
 
 Run examples:
 ```bash
 python3 examples/usage_examples.py
 python3 examples/quick_start.py
+python3 examples/agent_integration.py
 ```
+
+## 🎯 Environment Templates
+
+Get started quickly with pre-configured environments:
+
+| Template | Description | Tools Included |
+|----------|-------------|----------------|
+| **web-developer** | Full-stack web dev | git, nodejs, python3, docker, postgresql, redis, vscode |
+| **ai-ml-developer** | AI/ML & data science | git, python3, docker, vscode, jupyter, pytorch, pandas |
+| **mobile-developer** | Mobile app dev | git, nodejs, java, vscode, react-native, android-sdk |
+| **devops-engineer** | DevOps & cloud native | git, docker, kubectl, helm, terraform, vscode |
+
+Apply a template:
+```python
+agent = DevSetupAgent()
+result = agent.execute_command(
+    AgentCommand.APPLY_TEMPLATE,
+    {"template_name": "web-developer"}
+)
+```
+
+## 🧠 Smart Recommendation Engine
+
+The system analyzes your needs and suggests the best tools:
+
+```python
+from core.agent_interface import DevSetupAgent, AgentCommand
+
+agent = DevSetupAgent()
+
+# Get personalized recommendations
+result = agent.execute_command(
+    AgentCommand.RECOMMEND_TOOLS,
+    {
+        "style": "full-stack",
+        "size": "medium",
+        "cloud": "aws",
+        "existing": ["git"]
+    }
+)
+
+# Get installation plan with phases
+plan = result.data
+```
+
+The recommender considers:
+- Your development style
+- Team size
+- Cloud provider preference
+- Tools you already have
+- Compatibility checks
 
 ## 🧪 Testing
 

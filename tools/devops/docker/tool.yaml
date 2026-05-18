@@ -1,0 +1,119 @@
+# Docker Container Platform
+name: docker
+category: devops
+description: "Docker - container platform for developing, shipping, and running applications"
+version: "26"
+latest_version: "26"
+homepage: "https://www.docker.com/"
+documentation: "https://docs.docker.com/"
+license: "Apache 2.0"
+author: "Docker Inc."
+
+tags:
+  - docker
+  - containers
+  - devops
+  - deployment
+  - virtualization
+  - kubernetes
+
+supported_os:
+  - linux
+  - macos
+  - windows
+  - all
+
+installation_sources:
+  - type: curl
+    os: [linux]
+    description: "Docker convenience script (official)"
+    priority: 1
+    command: |
+      curl -fsSL https://get.docker.com -o get-docker.sh
+      sudo sh get-docker.sh
+      sudo usermod -aG docker $USER
+
+  - type: brew
+    os: [macos]
+    package_name: "--cask docker"
+    description: "Docker Desktop for macOS"
+    priority: 1
+
+  - type: manual
+    os: [windows]
+    url: "https://www.docker.com/products/docker-desktop/"
+    description: "Docker Desktop for Windows with WSL2"
+    priority: 1
+
+dependencies:
+  - name: curl
+    optional: false
+  - name: git
+    optional: true
+
+optional_tools:
+  - name: docker-compose
+    description: "Docker Compose"
+    recommended: true
+  - name: kubernetes
+    description: "Kubernetes (Docker Desktop)"
+    recommended: false
+
+config_files:
+  - path: "~/.docker/config.json"
+  - path: "/etc/docker/daemon.json"
+    optional: true
+
+environment_vars:
+  PATH: "/usr/local/bin:$PATH"
+
+post_install:
+  - "docker --version"
+  - "docker run --rm hello-world"
+
+verify_commands:
+  - "docker --version"
+  - "docker compose version"
+  - "docker info"
+
+popular_images:
+  - name: postgres
+    description: "PostgreSQL database"
+  - name: redis
+    description: "Redis cache"
+  - name: nginx
+    description: "Nginx web server"
+  - name: node
+    description: "Node.js"
+  - name: python
+    description: "Python"
+
+integrations:
+  - name: docker-vscode
+    description: "VS Code Docker extension"
+    auto_install: true
+
+compatible_with:
+  - nodejs
+  - python3
+  - git
+  - postgresql
+  - mongodb
+  - redis
+  - all-databases
+
+system_requirements:
+  disk_space: "5GB minimum"
+  memory: "2GB minimum"
+  architecture: ["amd64", "arm64"]
+  virtualization: true
+
+optimization_tips:
+  - Use Docker Compose for multi-container apps
+  - Use multi-stage builds for small images
+  - Clean up unused resources: docker system prune
+
+security_notes:
+  - Don't run containers as root
+  - Limit container resources
+  - Use official base images

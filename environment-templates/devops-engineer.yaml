@@ -1,0 +1,147 @@
+# DevOps & Cloud Native Environment
+name: devops-engineer
+description: "DevOps and cloud native development environment"
+version: "1.0"
+category: environment-template
+author: "Global-Dev-Setup"
+
+# Core tools
+core_tools:
+  - name: git
+    required: true
+    description: "Version control"
+  - name: docker
+    required: true
+    description: "Container runtime"
+  - name: vscode
+    required: true
+    description: "Code editor"
+  - name: python3
+    required: true
+    description: "Scripting and automation"
+
+# Kubernetes tools
+kubernetes_tools:
+  - name: kubectl
+    required: true
+    description: "Kubernetes CLI"
+  - name: helm
+    required: false
+    default: true
+    description: "Helm package manager"
+  - name: kustomize
+    required: false
+    default: true
+    description: "Kustomize"
+  - name: minikube
+    required: false
+    default: true
+    description: "Local Kubernetes"
+
+# CI/CD tools
+ci_cd_tools:
+  - name: github-cli
+    required: false
+    default: true
+    description: "GitHub CLI"
+  - name: gitlab-cli
+    required: false
+    default: false
+    description: "GitLab CLI"
+
+# Infrastructure as Code
+iac_tools:
+  - name: terraform
+    required: false
+    default: true
+    description: "Terraform IaC"
+  - name: ansible
+    required: false
+    default: false
+    description: "Ansible automation"
+
+# Cloud tools
+cloud_tools:
+  - name: aws-cli
+    required: false
+    default: false
+    description: "AWS CLI"
+  - name: gcloud-cli
+    required: false
+    default: false
+    description: "Google Cloud CLI"
+  - name: azure-cli
+    required: false
+    default: false
+    description: "Azure CLI"
+
+# Monitoring and observability
+observability_tools:
+  - name: kubectl
+    required: true
+    description: "Kubernetes CLI"
+  - name: prometheus
+    required: false
+    default: false
+    description: "Prometheus monitoring"
+  - name: grafana
+    required: false
+    default: false
+    description: "Grafana dashboards"
+
+# VS Code extensions
+vscode_extensions:
+  - eamodio.gitlens
+  - ms-azuretools.vscode-docker
+  - ms-kubernetes-tools.vscode-kubernetes-tools
+  - hashicorp.terraform
+  - redhat.vscode-yaml
+  - redhat.vscode-yaml
+
+# Environment configuration
+env_config:
+  kubernetes_enabled: true
+  docker_enabled: true
+  cloud_provider: "none"
+  iac: "terraform"
+  cicd: "github-actions"
+
+# Quick start
+quick_start:
+  - description: "Start Minikube"
+    command: "minikube start"
+  - description: "Deploy application"
+    command: "kubectl apply -f k8s/"
+  - description: "Initialize Terraform"
+    command: "terraform init"
+
+# Project templates
+project_templates:
+  - name: k8s-app-template
+    description: "Kubernetes application template"
+    url: "https://github.com/..."
+  - name: terraform-module
+    description: "Terraform module template"
+    url: "https://github.com/..."
+  - name: github-actions-ci
+    description: "GitHub Actions CI/CD template"
+    url: "https://github.com/..."
+
+# Estimated setup time
+estimated_setup_time: "30-60 minutes"
+
+# System requirements
+system_requirements:
+  disk_space: "15GB minimum"
+  memory: "16GB recommended"
+  architecture: ["amd64", "arm64"]
+
+# Tags
+tags:
+  - devops
+  - kubernetes
+  - cloud-native
+  - terraform
+  - docker
+  - ci-cd
+  - automation

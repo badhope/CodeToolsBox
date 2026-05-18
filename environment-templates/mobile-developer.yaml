@@ -1,0 +1,123 @@
+# Mobile App Development Environment
+name: mobile-developer
+description: "Mobile app development environment for iOS and Android"
+version: "1.0"
+category: environment-template
+author: "Global-Dev-Setup"
+
+# Core tools
+core_tools:
+  - name: git
+    required: true
+    description: "Version control"
+  - name: nodejs
+    required: true
+    description: "JavaScript runtime for React Native"
+  - name: vscode
+    required: true
+    description: "Code editor"
+
+# Platform-specific tools
+android_tools:
+  - name: java
+    required: false
+    default: true
+    description: "Java JDK for Android development"
+  - name: android-sdk
+    required: false
+    default: true
+    description: "Android SDK"
+  - name: android-studio
+    required: false
+    default: false
+    description: "Android Studio IDE"
+
+ios_tools:
+  - name: xcode
+    required: false
+    default: false
+    os: [macos]
+    description: "Xcode (macOS only)"
+
+# Cross-platform tools
+cross_platform_tools:
+  - name: flutter
+    required: false
+    default: false
+    description: "Flutter framework"
+  - name: react-native
+    required: false
+    default: true
+    description: "React Native"
+  - name: expo
+    required: false
+    default: false
+    description: "Expo platform"
+
+# Optional tools
+optional_tools:
+  - name: docker
+    required: false
+    default: true
+    description: "Emulator containers"
+  - name: firebase
+    required: false
+    default: false
+    description: "Firebase tools"
+
+# VS Code extensions
+vscode_extensions:
+  - ms-python.python
+  - dbaeumer.vscode-eslint
+  - eamodio.gitlens
+  - ms-azuretools.vscode-docker
+  - Dart-Code.flutter
+  - esbenp.prettier-vscode
+
+# Environment configuration
+env_config:
+  node_version: "20"
+  java_version: "17"
+  react_native: true
+  flutter: false
+  android: true
+  ios: false
+
+# Quick start
+quick_start:
+  - description: "Create React Native app"
+    command: "npx react-native@latest init MyApp"
+  - description: "Start Android emulator"
+    command: "emulator -avd Pixel_6_Pro"
+  - description: "Start iOS simulator (macOS only)"
+    command: "open -a Simulator"
+
+# Project templates
+project_templates:
+  - name: react-native-app
+    description: "React Native app template"
+    url: "https://github.com/..."
+  - name: flutter-app
+    description: "Flutter app template"
+    url: "https://github.com/..."
+  - name: expo-app
+    description: "Expo app template"
+    url: "https://github.com/..."
+
+# Estimated setup time
+estimated_setup_time: "45-90 minutes"
+
+# System requirements
+system_requirements:
+  disk_space: "30GB minimum"
+  memory: "16GB recommended"
+  architecture: ["amd64", "arm64"]
+
+# Tags
+tags:
+  - mobile
+  - android
+  - ios
+  - react-native
+  - flutter
+  - cross-platform

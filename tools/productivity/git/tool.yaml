@@ -1,0 +1,105 @@
+# Git Version Control
+name: git
+category: productivity
+description: "Git - the most popular distributed version control system"
+version: "2.45"
+latest_version: "2.45"
+homepage: "https://git-scm.com/"
+documentation: "https://git-scm.com/docs"
+license: "GPL v2"
+author: "Linus Torvalds"
+
+tags:
+  - version-control
+  - git
+  - source-control
+  - devops
+  - productivity
+
+supported_os:
+  - linux
+  - macos
+  - windows
+  - all
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: git git-gui git-doc
+    description: "System package manager"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: git
+    description: "Homebrew package manager"
+    priority: 1
+
+  - type: manual
+    os: [windows]
+    url: "https://git-scm.com/download/win"
+    description: "Git for Windows"
+    priority: 1
+
+dependencies:
+  - name: curl
+    optional: true
+
+optional_tools:
+  - name: gh
+    description: "GitHub CLI"
+    recommended: true
+  - name: git-lfs
+    description: "Git Large File Storage"
+    recommended: false
+
+config_files:
+  - path: "~/.gitconfig"
+    template: |
+      [user]
+        name = {{ username }}
+        email = {{ email }}
+      [core]
+        editor = vim
+        autocrlf = input
+        excludesfile = ~/.gitignore_global
+      [init]
+        defaultBranch = main
+      [pull]
+        rebase = true
+      [push]
+        autoSetupRemote = true
+      [color]
+        ui = true
+
+environment_vars:
+  GIT_PAGER: "less -r"
+  EDITOR: "vim"
+
+post_install:
+  - "git --version"
+
+verify_commands:
+  - "git --version"
+  - "git config --list"
+
+compatible_with:
+  - nodejs
+  - python3
+  - docker
+  - all-tools
+
+system_requirements:
+  disk_space: "100MB"
+  memory: "64MB minimum"
+  architecture: ["amd64", "arm64"]
+
+optimization_tips:
+  - Enable Git LFS for large files
+  - Use shallow clones for big repos
+  - Set up credential helpers
+
+best_practices:
+  - Use meaningful commit messages
+  - Create branches for features
+  - Write good pull requests

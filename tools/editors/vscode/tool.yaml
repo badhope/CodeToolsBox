@@ -1,0 +1,119 @@
+# VS Code Editor
+name: vscode
+category: editor
+description: "Visual Studio Code - powerful extensible code editor"
+version: "latest"
+latest_version: "1.90"
+homepage: "https://code.visualstudio.com/"
+documentation: "https://code.visualstudio.com/docs"
+license: "MIT"
+author: "Microsoft"
+
+tags:
+  - editor
+  - ide
+  - vscode
+  - text-editor
+  - programming
+
+supported_os:
+  - linux
+  - macos
+  - windows
+  - all
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: code
+    description: "VS Code from Microsoft repository"
+    priority: 1
+    command: |
+      wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+      sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/
+      echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
+      sudo apt update
+      sudo apt install -y code
+
+  - type: brew
+    os: [macos]
+    package_name: "--cask visual-studio-code"
+    description: "VS Code via Homebrew"
+    priority: 1
+
+  - type: manual
+    os: [all]
+    url: "https://code.visualstudio.com/"
+    description: "Download from VS Code website"
+    priority: 2
+
+dependencies:
+  - name: git
+    optional: true
+
+optional_tools:
+  - name: vscode-extensions
+    description: "Recommended VS Code extensions"
+    recommended: true
+
+config_files:
+  - path: "~/.config/Code/User/settings.json"
+    template: |
+      {
+        "editor.fontSize": 14,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "terminal.integrated.fontSize": 13,
+        "git.enabled": true,
+        "git.autofetch": true
+      }
+
+environment_vars:
+  PATH: "$PATH"
+
+post_install:
+  - "code --version"
+  - "code --install-extension ms-python.python"
+  - "code --install-extension dbaeumer.vscode-eslint"
+  - "code --install-extension eamodio.gitlens"
+
+verify_commands:
+  - "code --version"
+
+recommended_extensions:
+  - name: ms-python.python
+    description: "Python extension"
+    category: language
+    recommended: true
+  - name: dbaeumer.vscode-eslint
+    description: "ESLint"
+    category: language
+    recommended: true
+  - name: eamodio.gitlens
+    description: "Git lens"
+    category: vcs
+    recommended: true
+  - name: ms-azuretools.vscode-docker
+    description: "Docker"
+    category: devops
+    recommended: true
+  - name: redhat.vscode-yaml
+    description: "YAML support"
+    category: language
+    recommended: true
+
+compatible_with:
+  - all-programming-languages
+  - git
+  - docker
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "1GB minimum"
+  architecture: ["amd64", "arm64"]
+
+optimization_tips:
+  - Disable unused extensions
+  - Use Workspace Trust for security
+  - Sync settings across devices
