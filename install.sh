@@ -41,24 +41,73 @@ detect_os() {
 # Ask user which profile they want
 select_profile() {
     echo ""
-    echo "Select your development profile:"
+    echo "════════════════════════════════════════════════════════════"
+    echo "              Select your development profile"
+    echo "════════════════════════════════════════════════════════════"
     echo ""
-    echo "1) Full-Stack Web Developer"
-    echo "2) AI/ML & Data Science"
-    echo "3) DevOps & Cloud Native"
-    echo "4) Mobile App Developer"
-    echo "5) Frontend Only"
-    echo "6) Backend Only"
+    echo "=== Web Development ==="
+    echo "  1) Full-Stack Web Developer"
+    echo "  2) Frontend Developer"
+    echo "  3) Backend Developer"
     echo ""
-    read -p "Enter your choice (1-6): " choice
+    echo "=== AI & Machine Learning ==="
+    echo "  4) AI/ML Developer"
+    echo "  5) AI Agent Developer"
+    echo "  6) ML Engineer"
+    echo "  7) Data Scientist"
+    echo ""
+    echo "=== Big Data & Data Engineering ==="
+    echo "  8) Big Data Engineer"
+    echo "  9) Data Engineer"
+    echo ""
+    echo "=== DevOps & Cloud ==="
+    echo " 10) DevOps Engineer"
+    echo " 11) Cloud Native Developer"
+    echo " 12) System Administrator"
+    echo ""
+    echo "=== Mobile & Game ==="
+    echo " 13) Mobile App Developer"
+    echo " 14) Game Developer"
+    echo ""
+    echo "=== Specialized ==="
+    echo " 15) Blockchain Developer"
+    echo " 16) IoT Developer"
+    echo " 17) Embedded Developer"
+    echo " 18) Security Engineer"
+    echo " 19) QA/Testing Engineer"
+    echo ""
+    echo "=== Language-Specific ==="
+    echo " 20) Python Developer"
+    echo " 21) Java Developer"
+    echo " 22) Go Developer"
+    echo " 23) Rust Developer"
+    echo ""
+    read -p "Enter your choice (1-23): " choice
 
     case $choice in
         1) PROFILE="full-stack" ;;
-        2) PROFILE="ai-ml" ;;
-        3) PROFILE="devops" ;;
-        4) PROFILE="mobile" ;;
-        5) PROFILE="frontend" ;;
-        6) PROFILE="backend" ;;
+        2) PROFILE="frontend" ;;
+        3) PROFILE="backend" ;;
+        4) PROFILE="ai-ml" ;;
+        5) PROFILE="ai-agent" ;;
+        6) PROFILE="ml-engineer" ;;
+        7) PROFILE="data-science" ;;
+        8) PROFILE="big-data" ;;
+        9) PROFILE="data-engineering" ;;
+        10) PROFILE="devops" ;;
+        11) PROFILE="cloud-native" ;;
+        12) PROFILE="sysadmin" ;;
+        13) PROFILE="mobile" ;;
+        14) PROFILE="game-dev" ;;
+        15) PROFILE="blockchain" ;;
+        16) PROFILE="iot" ;;
+        17) PROFILE="embedded" ;;
+        18) PROFILE="security" ;;
+        19) PROFILE="qa" ;;
+        20) PROFILE="python" ;;
+        21) PROFILE="java" ;;
+        22) PROFILE="go" ;;
+        23) PROFILE="rust" ;;
         *) PROFILE="full-stack" ;;
     esac
 

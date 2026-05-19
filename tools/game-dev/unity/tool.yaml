@@ -1,0 +1,46 @@
+# Unity Game Engine
+name: unity
+category: game-dev
+description: "Unity - cross-platform game engine"
+version: "6000"
+latest_version: "6000"
+homepage: "https://unity.com/"
+documentation: "https://docs.unity3d.com/"
+license: "Unity EULA"
+author: "Unity Technologies"
+
+tags:
+  - unity
+  - game-dev
+  - game-engine
+  - 3d
+  - cross-platform
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: manual
+    os: [all]
+    url: "https://unity.com/download"
+    description: "Unity Hub"
+    priority: 1
+
+environment_vars:
+  UNITY_PATH: "/opt/Unity/Hub/Editor"
+
+post_install:
+  - "unityhub --version"
+
+verify_commands:
+  - "unityhub --version"
+
+compatible_with:
+  - c-cpp
+  - dotnet
+
+system_requirements:
+  disk_space: "20GB"
+  memory: "8GB minimum"

@@ -1,0 +1,46 @@
+# Apache Airflow
+name: airflow
+category: data-engineering
+description: "Apache Airflow - orchestration platform for data workflows"
+version: "2.8"
+latest_version: "2.8"
+homepage: "https://airflow.apache.org/"
+documentation: "https://airflow.apache.org/docs/"
+license: "Apache 2.0"
+author: "Apache Software Foundation"
+
+tags:
+  - airflow
+  - data-engineering
+  - orchestration
+  - workflow
+  - etl
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: apache-airflow
+    description: "pip installation"
+    priority: 1
+
+environment_vars:
+  AIRFLOW_HOME: "$HOME/airflow"
+
+post_install:
+  - "airflow version"
+
+verify_commands:
+  - "airflow version"
+
+compatible_with:
+  - python3
+  - kubernetes
+
+system_requirements:
+  disk_space: "1GB"
+  memory: "2GB minimum"

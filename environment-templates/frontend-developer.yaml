@@ -1,0 +1,57 @@
+# Frontend Developer Template
+name: frontend-developer
+description: "Complete environment for frontend web development"
+category: web-development
+recommended_for:
+  - Frontend developers
+  - UI/UX developers
+  - JavaScript/TypeScript developers
+
+required_tools:
+  - name: nodejs
+    version: "20+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: react
+    version: "18+"
+  - name: vue
+    version: "3+"
+  - name: vscode
+    version: "1.80+"
+  - name: docker
+    version: "20+"
+
+optional_tools:
+  - name: angular
+    version: "17+"
+  - name: nextjs
+    version: "14+"
+  - name: typescript
+    version: "5.0+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, nodejs]
+    description: "安装版本控制和Node.js"
+  
+  phase_2:
+    name: "框架"
+    tools: [react, vue]
+    description: "安装主流前端框架"
+  
+  phase_3:
+    name: "开发工具"
+    tools: [vscode, docker]
+    description: "安装编辑器和容器"
+
+post_install_steps:
+  - "npm install -g npm@latest"
+  - "npm install -g typescript"
+  - "npm install -g eslint prettier"
+  - "echo '前端开发环境准备完成!'"
+
+compatible_templates:
+  - web-developer

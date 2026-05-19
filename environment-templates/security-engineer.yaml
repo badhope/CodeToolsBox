@@ -1,0 +1,51 @@
+# Security Engineer Template
+name: security-engineer
+description: "Complete environment for security engineering"
+category: security
+recommended_for:
+  - Security engineers
+  - Penetration testers
+  - Security analysts
+
+required_tools:
+  - name: python3
+    version: "3.11+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: docker
+    version: "20+"
+  - name: openssl
+    version: "3.2+"
+  - name: go
+    version: "1.22+"
+
+optional_tools:
+  - name: burp-suite
+    version: "2023+"
+  - name: metasploit
+    version: "6.0+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, python3]
+    description: "安装版本控制和Python"
+  
+  phase_2:
+    name: "安全工具"
+    tools: [openssl, docker]
+    description: "安装安全工具和容器"
+  
+  phase_3:
+    name: "语言"
+    tools: [go]
+    description: "安装Go语言"
+
+post_install_steps:
+  - "pip install requests beautifulsoup4"
+  - "echo '安全工程环境准备完成!'"
+
+compatible_templates:
+  - backend-developer

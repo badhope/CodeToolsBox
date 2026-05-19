@@ -1,0 +1,64 @@
+# Big Data Engineer Template
+name: big-data-engineer
+description: "Complete environment for big data engineering"
+category: big-data
+recommended_for:
+  - Big data engineers
+  - Data analysts
+  - Data scientists
+
+required_tools:
+  - name: java
+    version: "21+"
+  - name: python3
+    version: "3.11+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: spark
+    version: "3.5+"
+  - name: hadoop
+    version: "3.4+"
+  - name: kafka
+    version: "3.6+"
+  - name: jupyter
+    version: "7.0+"
+  - name: docker
+    version: "20+"
+
+optional_tools:
+  - name: hive
+    version: "4.0+"
+  - name: elasticsearch
+    version: "8.13+"
+  - name: airflow
+    version: "2.8+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, java, python3]
+    description: "安装版本控制和语言环境"
+  
+  phase_2:
+    name: "分布式计算"
+    tools: [hadoop, spark]
+    description: "安装分布式计算框架"
+  
+  phase_3:
+    name: "流处理"
+    tools: [kafka]
+    description: "安装流处理平台"
+  
+  phase_4:
+    name: "工具"
+    tools: [jupyter, docker]
+    description: "安装开发工具"
+
+post_install_steps:
+  - "pip install pyspark pandas numpy"
+  - "echo '大数据工程环境准备完成!'"
+
+compatible_templates:
+  - data-engineering

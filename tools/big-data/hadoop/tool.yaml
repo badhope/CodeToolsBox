@@ -1,0 +1,50 @@
+# Apache Hadoop
+name: hadoop
+category: big-data
+description: "Apache Hadoop - distributed storage and processing framework"
+version: "3.4"
+latest_version: "3.4"
+homepage: "https://hadoop.apache.org/"
+documentation: "https://hadoop.apache.org/docs/current/"
+license: "Apache 2.0"
+author: "Apache Software Foundation"
+
+tags:
+  - hadoop
+  - big-data
+  - distributed-storage
+  - hdfs
+  - mapreduce
+
+supported_os:
+  - linux
+  - macos
+
+installation_sources:
+  - type: manual
+    os: [linux, macos]
+    url: "https://hadoop.apache.org/releases.html"
+    description: "Manual download"
+    priority: 1
+    command: |
+      wget https://dlcdn.apache.org/hadoop/common/hadoop-3.4.0/hadoop-3.4.0.tar.gz
+      tar -xzf hadoop-3.4.0.tar.gz
+      sudo mv hadoop-3.4.0 /opt/hadoop
+
+environment_vars:
+  HADOOP_HOME: "/opt/hadoop"
+  PATH: "$HADOOP_HOME/bin:$PATH"
+
+post_install:
+  - "hadoop version"
+
+verify_commands:
+  - "hadoop version"
+
+compatible_with:
+  - java
+  - spark
+
+system_requirements:
+  disk_space: "10GB"
+  memory: "8GB minimum"

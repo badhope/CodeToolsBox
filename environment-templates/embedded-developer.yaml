@@ -1,0 +1,50 @@
+# Embedded Systems Developer Template
+name: embedded-developer
+description: "Complete environment for embedded systems development"
+category: embedded
+recommended_for:
+  - Embedded developers
+  - IoT developers
+  - Hardware engineers
+
+required_tools:
+  - name: c-cpp
+    version: "14+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: arduino
+    version: "2.2+"
+  - name: esp32
+    version: "5.2+"
+  - name: cmake
+    version: "3.20+"
+
+optional_tools:
+  - name: python3
+    version: "3.11+"
+  - name: raspberry-pi
+    version: "64+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, c-cpp]
+    description: "安装版本控制和C/C++工具链"
+  
+  phase_2:
+    name: "嵌入式框架"
+    tools: [arduino, esp32]
+    description: "安装嵌入式开发框架"
+  
+  phase_3:
+    name: "构建工具"
+    tools: [cmake]
+    description: "安装构建工具"
+
+post_install_steps:
+  - "echo '嵌入式开发环境准备完成!'"
+
+compatible_templates:
+  - iot-developer

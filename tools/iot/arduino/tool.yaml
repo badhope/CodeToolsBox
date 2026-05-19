@@ -1,0 +1,45 @@
+# IoT Development
+name: arduino
+category: iot
+description: "Arduino - open-source electronics platform"
+version: "2.2"
+latest_version: "2.2"
+homepage: "https://www.arduino.cc/"
+documentation: "https://www.arduino.cc/reference/en/"
+license: "GPL"
+author: "Arduino"
+
+tags:
+  - arduino
+  - iot
+  - electronics
+  - embedded
+  - microcontroller
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: manual
+    os: [all]
+    url: "https://www.arduino.cc/en/software"
+    description: "Arduino IDE"
+    priority: 1
+
+environment_vars:
+  ARDUINO_PATH: "/opt/arduino"
+
+post_install:
+  - "arduino-cli version"
+
+verify_commands:
+  - "arduino-cli version"
+
+compatible_with:
+  - c-cpp
+
+system_requirements:
+  disk_space: "1GB"
+  memory: "512MB minimum"

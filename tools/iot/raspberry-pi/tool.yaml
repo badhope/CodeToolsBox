@@ -1,0 +1,45 @@
+# Raspberry Pi Tools
+name: raspberry-pi
+category: iot
+description: "Raspberry Pi - single-board computer tools"
+version: "64"
+latest_version: "64"
+homepage: "https://www.raspberrypi.com/"
+documentation: "https://www.raspberrypi.com/documentation/computers/"
+license: "BSD"
+author: "Raspberry Pi Foundation"
+
+tags:
+  - raspberry-pi
+  - iot
+  - embedded
+  - linux
+  - single-board
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: manual
+    os: [all]
+    url: "https://www.raspberrypi.com/software/"
+    description: "Raspberry Pi Imager"
+    priority: 1
+
+environment_vars:
+  PATH: "/usr/local/bin:$PATH"
+
+post_install:
+  - "rpicam-vid --version"
+
+verify_commands:
+  - "rpicam-vid --version"
+
+compatible_with:
+  - python3
+
+system_requirements:
+  disk_space: "8GB minimum (SD card)"
+  memory: "Depends on Pi model"

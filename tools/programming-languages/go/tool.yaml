@@ -1,0 +1,65 @@
+# Go Programming Language
+name: go
+category: programming-language
+description: "Go - simple, reliable, efficient programming language"
+version: "1.22"
+latest_version: "1.22"
+homepage: "https://go.dev/"
+documentation: "https://go.dev/doc/"
+license: "BSD"
+author: "Google"
+
+tags:
+  - go
+  - golang
+  - backend
+  - cloud-native
+  - microservices
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: curl
+    os: [linux, macos]
+    description: "Official installer"
+    priority: 1
+    command: |
+      GO_VERSION="1.22.0"
+      wget "https://dl.google.com/go/go$GO_VERSION.linux-amd64.tar.gz"
+      sudo tar -C /usr/local -xzf "go$GO_VERSION.linux-amd64.tar.gz"
+
+  - type: brew
+    os: [macos]
+    package_name: go
+    description: "Homebrew installation"
+    priority: 1
+
+  - type: apt
+    os: [linux]
+    package_name: golang-go
+    description: "System packages"
+    priority: 2
+
+environment_vars:
+  PATH: "/usr/local/go/bin:$PATH"
+  GOPATH: "$HOME/go"
+  PATH: "$GOPATH/bin:$PATH"
+
+post_install:
+  - "go version"
+
+verify_commands:
+  - "go version"
+  - "go env"
+
+compatible_with:
+  - docker
+  - kubernetes
+  - git
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "512MB minimum"

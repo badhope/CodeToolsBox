@@ -1,0 +1,60 @@
+# ML Engineer Template
+name: ml-engineer
+description: "Complete environment for machine learning engineering"
+category: ai-ml
+recommended_for:
+  - ML engineers
+  - Machine learning developers
+  - AI researchers
+
+required_tools:
+  - name: python3
+    version: "3.11+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: pytorch
+    version: "2.1+"
+  - name: tensorflow
+    version: "2.15+"
+  - name: jupyter
+    version: "7.0+"
+  - name: docker
+    version: "20+"
+  - name: huggingface
+    version: "4.36+"
+
+optional_tools:
+  - name: spark
+    version: "3.5+"
+  - name: kubeflow
+    version: "1.8+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, python3]
+    description: "安装版本控制和Python"
+  
+  phase_2:
+    name: "ML框架"
+    tools: [pytorch, tensorflow]
+    description: "安装机器学习框架"
+  
+  phase_3:
+    name: "工具"
+    tools: [jupyter, huggingface]
+    description: "安装开发工具"
+  
+  phase_4:
+    name: "部署"
+    tools: [docker]
+    description: "安装容器"
+
+post_install_steps:
+  - "pip install scikit-learn pandas numpy matplotlib"
+  - "echo '机器学习工程环境准备完成!'"
+
+compatible_templates:
+  - ai-ml-developer

@@ -1,0 +1,61 @@
+# TensorFlow
+name: tensorflow
+category: ai-ml
+description: "TensorFlow - end-to-end platform for machine learning"
+version: "2.15"
+latest_version: "2.15"
+homepage: "https://www.tensorflow.org/"
+documentation: "https://www.tensorflow.org/guide"
+license: "Apache 2.0"
+author: "Google"
+
+tags:
+  - tensorflow
+  - machine-learning
+  - deep-learning
+  - ai
+  - neural-networks
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: tensorflow
+    description: "pip installation"
+    priority: 1
+
+  - type: pip-gpu
+    os: [linux]
+    package_name: tensorflow-gpu
+    description: "GPU version"
+    priority: 2
+
+optional_tools:
+  - name: tensorflow-datasets
+    description: "Datasets"
+    recommended: true
+  - name: tensorboard
+    description: "Visualization"
+    recommended: true
+
+environment_vars:
+  CUDA_VISIBLE_DEVICES: "0"
+
+post_install:
+  - "python -c 'import tensorflow; print(tensorflow.__version__)'"
+
+verify_commands:
+  - "python -c 'import tensorflow; print(tensorflow.__version__)'"
+
+compatible_with:
+  - python3
+  - jupyter
+  - numpy
+
+system_requirements:
+  disk_space: "10GB"
+  memory: "8GB minimum (16GB recommended)"

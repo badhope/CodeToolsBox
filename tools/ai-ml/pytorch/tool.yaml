@@ -1,0 +1,61 @@
+# PyTorch
+name: pytorch
+category: ai-ml
+description: "PyTorch - deep learning framework"
+version: "2.1"
+latest_version: "2.1"
+homepage: "https://pytorch.org/"
+documentation: "https://pytorch.org/docs/stable/"
+license: "BSD"
+author: "Meta"
+
+tags:
+  - pytorch
+  - machine-learning
+  - deep-learning
+  - ai
+  - research
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: torch torchvision torchaudio
+    description: "pip installation"
+    priority: 1
+
+  - type: conda
+    os: [all]
+    package_name: pytorch torchvision torchaudio
+    description: "conda installation"
+    priority: 2
+
+optional_tools:
+  - name: torchtext
+    description: "Text processing"
+    recommended: true
+  - name: torchmetrics
+    description: "Metrics"
+    recommended: true
+
+environment_vars:
+  CUDA_VISIBLE_DEVICES: "0"
+
+post_install:
+  - "python -c 'import torch; print(torch.__version__)'"
+
+verify_commands:
+  - "python -c 'import torch; print(torch.__version__)'"
+
+compatible_with:
+  - python3
+  - jupyter
+  - numpy
+
+system_requirements:
+  disk_space: "10GB"
+  memory: "8GB minimum (16GB recommended)"

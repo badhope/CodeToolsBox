@@ -1,0 +1,56 @@
+# Next.js Framework
+name: nextjs
+category: framework
+description: "Next.js - React framework for production"
+version: "14"
+latest_version: "14"
+homepage: "https://nextjs.org/"
+documentation: "https://nextjs.org/docs"
+license: "MIT"
+author: "Vercel"
+
+tags:
+  - nextjs
+  - react
+  - full-stack
+  - ssr
+  - vercel
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: create-next-app
+    os: [all]
+    description: "Create Next.js app"
+    priority: 1
+    command: |
+      npx create-next-app@14.0.0 .
+
+optional_tools:
+  - name: typescript
+    description: "TypeScript support"
+    recommended: true
+  - name: tailwindcss
+    description: "CSS framework"
+    recommended: true
+
+environment_vars:
+  NODE_ENV: "development"
+
+post_install:
+  - "npm install"
+
+verify_commands:
+  - "node -v"
+
+compatible_with:
+  - nodejs
+  - react
+  - typescript
+
+system_requirements:
+  disk_space: "1GB"
+  memory: "2GB minimum"

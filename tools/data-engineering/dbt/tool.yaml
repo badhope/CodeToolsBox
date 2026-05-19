@@ -1,0 +1,47 @@
+# Data Engineering Tools
+name: dbt
+category: data-engineering
+description: "dbt - data build tool for analytics"
+version: "1.7"
+latest_version: "1.7"
+homepage: "https://www.getdbt.com/"
+documentation: "https://docs.getdbt.com/"
+license: "Apache 2.0"
+author: "dbt Labs"
+
+tags:
+  - dbt
+  - data-engineering
+  - analytics
+  - data-warehouse
+  - sql
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: dbt-postgres dbt-redshift dbt-bigquery
+    description: "pip installation"
+    priority: 1
+
+environment_vars:
+  DBT_PROFILES_DIR: "$HOME/.dbt"
+
+post_install:
+  - "dbt --version"
+
+verify_commands:
+  - "dbt --version"
+
+compatible_with:
+  - python3
+  - postgresql
+  - bigquery
+
+system_requirements:
+  disk_space: "200MB"
+  memory: "512MB minimum"

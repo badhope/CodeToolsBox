@@ -1,0 +1,51 @@
+# Apache Hive
+name: hive
+category: big-data
+description: "Apache Hive - data warehouse infrastructure"
+version: "4.0"
+latest_version: "4.0"
+homepage: "https://hive.apache.org/"
+documentation: "https://cwiki.apache.org/confluence/display/hive/"
+license: "Apache 2.0"
+author: "Apache Software Foundation"
+
+tags:
+  - hive
+  - data-warehouse
+  - sql
+  - big-data
+  - analytics
+
+supported_os:
+  - linux
+  - macos
+
+installation_sources:
+  - type: manual
+    os: [linux, macos]
+    url: "https://hive.apache.org/downloads.html"
+    description: "Manual download"
+    priority: 1
+    command: |
+      wget https://dlcdn.apache.org/hive/hive-4.0.0/apache-hive-4.0.0-bin.tar.gz
+      tar -xzf apache-hive-4.0.0-bin.tar.gz
+      sudo mv apache-hive-4.0.0-bin /opt/hive
+
+environment_vars:
+  HIVE_HOME: "/opt/hive"
+  PATH: "$HIVE_HOME/bin:$PATH"
+
+post_install:
+  - "hive --version"
+
+verify_commands:
+  - "hive --version"
+
+compatible_with:
+  - java
+  - hadoop
+  - spark
+
+system_requirements:
+  disk_space: "5GB"
+  memory: "4GB minimum"

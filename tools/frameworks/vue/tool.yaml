@@ -1,0 +1,61 @@
+# Vue.js Framework
+name: vue
+category: framework
+description: "Vue.js - progressive JavaScript framework"
+version: "3"
+latest_version: "3"
+homepage: "https://vuejs.org/"
+documentation: "https://vuejs.org/guide/introduction.html"
+license: "MIT"
+author: "Evan You"
+
+tags:
+  - vue
+  - vuejs
+  - frontend
+  - ui
+  - progressive
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: npm
+    os: [all]
+    package_name: vue
+    description: "npm installation"
+    priority: 1
+
+  - type: create-vue
+    os: [all]
+    description: "Create Vue App"
+    priority: 1
+    command: |
+      npm create vue@6.5.0 .
+
+optional_tools:
+  - name: vue-router
+    description: "Routing"
+    recommended: true
+  - name: pinia
+    description: "State management"
+    recommended: true
+
+environment_vars:
+  NODE_ENV: "development"
+
+post_install:
+  - "npm install"
+
+verify_commands:
+  - "node -v"
+
+compatible_with:
+  - nodejs
+  - npm
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "1GB minimum"

@@ -1,0 +1,45 @@
+# QA/Testing Engineer Template
+name: qa-engineer
+description: "Complete environment for QA and testing"
+category: qa
+recommended_for:
+  - QA engineers
+  - Test automation engineers
+  - SDET engineers
+
+required_tools:
+  - name: python3
+    version: "3.11+"
+  - name: nodejs
+    version: "20+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: docker
+    version: "20+"
+  - name: postgresql
+    version: "15+"
+
+optional_tools:
+  - name: java
+    version: "21+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, python3, nodejs]
+    description: "安装版本控制和语言环境"
+  
+  phase_2:
+    name: "测试工具"
+    tools: [docker, postgresql]
+    description: "安装容器和测试数据库"
+
+post_install_steps:
+  - "pip install pytest selenium requests"
+  - "npm install -g cypress"
+  - "echo 'QA测试环境准备完成!'"
+
+compatible_templates:
+  - backend-developer

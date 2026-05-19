@@ -1,0 +1,63 @@
+# Ansible
+name: ansible
+category: devops
+description: "Ansible - IT automation platform"
+version: "9.0"
+latest_version: "9.0"
+homepage: "https://www.ansible.com/"
+documentation: "https://docs.ansible.com/"
+license: "GPL 3.0"
+author: "Red Hat"
+
+tags:
+  - ansible
+  - automation
+  - configuration-management
+  - devops
+  - orchestration
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: ansible
+    description: "pip installation"
+    priority: 1
+
+  - type: apt
+    os: [linux]
+    package_name: ansible
+    description: "Apt installation"
+    priority: 2
+
+  - type: brew
+    os: [macos]
+    package_name: ansible
+    description: "Homebrew"
+    priority: 2
+
+optional_tools:
+  - name: ansible-core
+    description: "Core ansible"
+    recommended: false
+
+environment_vars:
+  ANSIBLE_CONFIG: "$HOME/.ansible.cfg"
+
+post_install:
+  - "ansible --version"
+
+verify_commands:
+  - "ansible --version"
+
+compatible_with:
+  - python3
+  - ssh
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "512MB minimum"

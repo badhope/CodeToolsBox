@@ -1,0 +1,70 @@
+# C/C++ Development
+name: c-cpp
+category: programming-language
+description: "C/C++ compilers and development tools"
+version: "14"
+latest_version: "14"
+homepage: "https://gcc.gnu.org/"
+documentation: "https://gcc.gnu.org/onlinedocs/"
+license: "GPL"
+author: "GNU"
+
+tags:
+  - c
+  - cpp
+  - systems-programming
+  - embedded
+  - game-dev
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: build-essential gcc g++ cmake
+    description: "GCC from apt"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: gcc cmake
+    description: "Homebrew GCC"
+    priority: 1
+
+  - type: manual
+    os: [windows]
+    url: "https://visualstudio.microsoft.com/vs/features/cplusplus/"
+    description: "Visual Studio Build Tools"
+    priority: 1
+
+optional_tools:
+  - name: make
+    description: "Build automation"
+    recommended: true
+  - name: ninja
+    description: "Build system"
+    recommended: false
+
+environment_vars:
+  PATH: "/usr/local/bin:$PATH"
+
+post_install:
+  - "gcc --version"
+  - "g++ --version"
+
+verify_commands:
+  - "gcc --version"
+  - "g++ --version"
+  - "cmake --version"
+
+compatible_with:
+  - git
+  - docker
+  - make
+
+system_requirements:
+  disk_space: "1GB"
+  memory: "512MB minimum"

@@ -1,0 +1,45 @@
+# Unreal Engine
+name: unreal
+category: game-dev
+description: "Unreal Engine - advanced real-time 3D creation tool"
+version: "5.4"
+latest_version: "5.4"
+homepage: "https://www.unrealengine.com/"
+documentation: "https://docs.unrealengine.com/"
+license: "Epic EULA"
+author: "Epic Games"
+
+tags:
+  - unreal
+  - game-dev
+  - game-engine
+  - 3d
+  - real-time
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: manual
+    os: [all]
+    url: "https://www.unrealengine.com/en-US/download"
+    description: "Epic Games Launcher"
+    priority: 1
+
+environment_vars:
+  UNREAL_ENGINE_PATH: "$HOME/UnrealEngine"
+
+post_install:
+  - "ue4editor"
+
+verify_commands:
+  - "ue4editor"
+
+compatible_with:
+  - c-cpp
+
+system_requirements:
+  disk_space: "30GB"
+  memory: "16GB minimum"

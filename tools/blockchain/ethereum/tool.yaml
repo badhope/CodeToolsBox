@@ -1,0 +1,59 @@
+# Ethereum Development
+name: ethereum
+category: blockchain
+description: "Ethereum - smart contract development tools"
+version: "12"
+latest_version: "12"
+homepage: "https://ethereum.org/"
+documentation: "https://ethereum.org/en/developers/"
+license: "MIT"
+author: "Ethereum Foundation"
+
+tags:
+  - ethereum
+  - blockchain
+  - smart-contracts
+  - solidity
+  - web3
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: npm
+    os: [all]
+    package_name: hardhat truffle ganache
+    description: "npm tools"
+    priority: 1
+
+  - type: curl
+    os: [linux, macos]
+    description: "Foundry"
+    priority: 2
+    command: |
+      curl -L https://foundry.paradigm.xyz | bash
+      foundryup
+
+optional_tools:
+  - name: solidity
+    description: "Solidity compiler"
+    recommended: true
+
+environment_vars:
+  PATH: "$HOME/.foundry/bin:$PATH"
+
+post_install:
+  - "hardhat --version"
+
+verify_commands:
+  - "npx hardhat --version"
+
+compatible_with:
+  - nodejs
+  - npm
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "1GB minimum"

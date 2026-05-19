@@ -1,0 +1,64 @@
+# AI Agent Developer Template
+name: ai-agent-developer
+description: "Complete environment for AI Agent development"
+category: ai-ml
+recommended_for:
+  - AI Agent developers
+  - LLM application builders
+  - Chatbot developers
+
+required_tools:
+  - name: python3
+    version: "3.11+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: docker
+    version: "20+"
+  - name: pytorch
+    version: "2.0+"
+  - name: huggingface
+    version: "4.30+"
+  - name: jupyter
+    version: "7.0+"
+  - name: redis
+    version: "7.0+"
+
+optional_tools:
+  - name: tensorflow
+    version: "2.15+"
+  - name: postgresql
+    version: "15+"
+  - name: vscode
+    version: "1.80+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, python3]
+    description: "安装版本控制和Python"
+  
+  phase_2:
+    name: "容器和数据库"
+    tools: [docker, redis, postgresql]
+    description: "安装容器和缓存/数据库"
+  
+  phase_3:
+    name: "AI框架"
+    tools: [pytorch, huggingface, jupyter]
+    description: "安装机器学习框架"
+
+  phase_4:
+    name: "开发工具"
+    tools: [vscode]
+    description: "安装编辑器"
+
+post_install_steps:
+  - "pip install langchain llama-index openai anthropic"
+  - "pip install pydantic fastapi uvicorn"
+  - "echo 'AI Agent开发环境准备完成!'"
+
+compatible_templates:
+  - web-developer
+  - backend-developer

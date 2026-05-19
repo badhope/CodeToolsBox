@@ -1,0 +1,52 @@
+# OpenSSL
+name: openssl
+category: security
+description: "OpenSSL - cryptography toolkit"
+version: "3.2"
+latest_version: "3.2"
+homepage: "https://www.openssl.org/"
+documentation: "https://www.openssl.org/docs/"
+license: "Apache 2.0"
+author: "OpenSSL Project"
+
+tags:
+  - openssl
+  - security
+  - cryptography
+  - ssl
+  - tls
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: openssl
+    description: "Apt installation"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: openssl@3
+    description: "Homebrew"
+    priority: 1
+
+environment_vars:
+  OPENSSL_CONF: "/etc/ssl/openssl.cnf"
+
+post_install:
+  - "openssl version"
+
+verify_commands:
+  - "openssl version"
+
+compatible_with:
+  - nginx
+  - apache
+
+system_requirements:
+  disk_space: "100MB"
+  memory: "128MB minimum"

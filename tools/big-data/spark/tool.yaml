@@ -1,0 +1,58 @@
+# Apache Spark
+name: spark
+category: big-data
+description: "Apache Spark - unified analytics engine for big data"
+version: "3.5"
+latest_version: "3.5"
+homepage: "https://spark.apache.org/"
+documentation: "https://spark.apache.org/docs/latest/"
+license: "Apache 2.0"
+author: "Apache Software Foundation"
+
+tags:
+  - spark
+  - big-data
+  - analytics
+  - data-processing
+  - distributed
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: manual
+    os: [all]
+    url: "https://spark.apache.org/downloads.html"
+    description: "Manual download"
+    priority: 1
+    command: |
+      wget https://dlcdn.apache.org/spark/spark-3.5.0/spark-3.5.0-bin-hadoop3.tgz
+      tar -xzf spark-3.5.0-bin-hadoop3.tgz
+      sudo mv spark-3.5.0-bin-hadoop3 /opt/spark
+
+  - type: pip
+    os: [all]
+    package_name: pyspark
+    description: "Python API"
+    priority: 2
+
+environment_vars:
+  SPARK_HOME: "/opt/spark"
+  PATH: "$SPARK_HOME/bin:$PATH"
+
+post_install:
+  - "spark-submit --version"
+
+verify_commands:
+  - "spark-submit --version"
+
+compatible_with:
+  - java
+  - python3
+  - hadoop
+
+system_requirements:
+  disk_space: "5GB"
+  memory: "8GB minimum"

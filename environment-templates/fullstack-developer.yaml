@@ -1,0 +1,68 @@
+# Full Stack Developer Template
+name: fullstack-developer
+description: "Complete environment for full-stack web development"
+category: web-development
+recommended_for:
+  - Full-stack developers
+  - Full-stack engineers
+  - Web application developers
+
+required_tools:
+  - name: git
+    version: "2.30+"
+  - name: nodejs
+    version: "20+"
+  - name: python3
+    version: "3.11+"
+
+recommended_tools:
+  - name: docker
+    version: "20+"
+  - name: postgresql
+    version: "15+"
+  - name: redis
+    version: "7.0+"
+  - name: react
+    version: "18+"
+  - name: nextjs
+    version: "14+"
+  - name: vscode
+    version: "1.80+"
+
+optional_tools:
+  - name: vue
+    version: "3+"
+  - name: fastapi
+    version: "0.100+"
+  - name: typescript
+    version: "5.0+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, nodejs, python3]
+    description: "安装版本控制和语言环境"
+  
+  phase_2:
+    name: "数据库"
+    tools: [postgresql, redis]
+    description: "安装数据库和缓存"
+  
+  phase_3:
+    name: "框架"
+    tools: [react, nextjs, docker]
+    description: "安装前端框架和容器"
+  
+  phase_4:
+    name: "开发工具"
+    tools: [vscode]
+    description: "安装编辑器"
+
+post_install_steps:
+  - "npm install -g typescript eslint"
+  - "pip install fastapi uvicorn"
+  - "echo '全栈开发环境准备完成!'"
+
+compatible_templates:
+  - frontend-developer
+  - backend-developer

@@ -1,0 +1,62 @@
+# Django Framework
+name: django
+category: framework
+description: "Django - high-level Python web framework"
+version: "5.0"
+latest_version: "5.0"
+homepage: "https://www.djangoproject.com/"
+documentation: "https://docs.djangoproject.com/"
+license: "BSD"
+author: "Django Software Foundation"
+
+tags:
+  - django
+  - python
+  - web-development
+  - backend
+  - orm
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: django
+    description: "pip installation"
+    priority: 1
+
+  - type: django-admin
+    os: [all]
+    description: "Create Django project"
+    priority: 1
+    command: |
+      django-admin startproject myproject
+
+optional_tools:
+  - name: djangorestframework
+    description: "REST framework"
+    recommended: true
+  - name: django-cors-headers
+    description: "CORS support"
+    recommended: true
+
+environment_vars:
+  DJANGO_SETTINGS_MODULE: "myproject.settings"
+
+post_install:
+  - "python manage.py migrate"
+
+verify_commands:
+  - "django-admin --version"
+
+compatible_with:
+  - python3
+  - postgresql
+  - redis
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "1GB minimum"

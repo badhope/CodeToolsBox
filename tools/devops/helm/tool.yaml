@@ -1,0 +1,53 @@
+# Helm
+name: helm
+category: devops
+description: "Helm - Kubernetes package manager"
+version: "3.14"
+latest_version: "3.14"
+homepage: "https://helm.sh/"
+documentation: "https://helm.sh/docs/"
+license: "Apache 2.0"
+author: "Helm"
+
+tags:
+  - helm
+  - kubernetes
+  - charts
+  - devops
+  - cloud-native
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: curl
+    os: [linux, macos]
+    description: "Official installation"
+    priority: 1
+    command: |
+      curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+  - type: brew
+    os: [macos]
+    package_name: helm
+    description: "Homebrew"
+    priority: 1
+
+environment_vars:
+  PATH: "/usr/local/bin:$PATH"
+
+post_install:
+  - "helm version"
+
+verify_commands:
+  - "helm version"
+
+compatible_with:
+  - kubectl
+  - docker
+
+system_requirements:
+  disk_space: "100MB"
+  memory: "256MB minimum"

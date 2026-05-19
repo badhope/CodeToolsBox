@@ -1,0 +1,64 @@
+# Data Engineering Template
+name: data-engineering
+description: "Complete environment for data engineering"
+category: data-engineering
+recommended_for:
+  - Data engineers
+  - ETL developers
+  - Data pipeline developers
+
+required_tools:
+  - name: python3
+    version: "3.11+"
+  - name: git
+    version: "2.30+"
+  - name: java
+    version: "21+"
+
+recommended_tools:
+  - name: spark
+    version: "3.5+"
+  - name: dbt
+    version: "1.7+"
+  - name: airflow
+    version: "2.8+"
+  - name: docker
+    version: "20+"
+  - name: postgresql
+    version: "15+"
+
+optional_tools:
+  - name: kubeflow
+    version: "1.8+"
+  - name: kafka
+    version: "3.6+"
+  - name: jupyter
+    version: "7.0+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, python3, java]
+    description: "安装版本控制和语言环境"
+  
+  phase_2:
+    name: "数据库"
+    tools: [postgresql]
+    description: "安装数据库"
+  
+  phase_3:
+    name: "处理框架"
+    tools: [spark, dbt]
+    description: "安装数据处理框架"
+  
+  phase_4:
+    name: "编排"
+    tools: [airflow, docker]
+    description: "安装编排工具"
+
+post_install_steps:
+  - "pip install pandas numpy scipy"
+  - "echo '数据工程环境准备完成!'"
+
+compatible_templates:
+  - big-data-engineer

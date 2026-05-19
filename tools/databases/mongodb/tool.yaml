@@ -1,0 +1,66 @@
+# MongoDB Database
+name: mongodb
+category: database
+description: "MongoDB - NoSQL document database"
+version: "7.0"
+latest_version: "7.0"
+homepage: "https://www.mongodb.com/"
+documentation: "https://www.mongodb.com/docs/"
+license: "SSPL"
+author: "MongoDB Inc."
+
+tags:
+  - mongodb
+  - nosql
+  - document-database
+  - big-data
+  - real-time
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: mongodb-org
+    description: "MongoDB from official repo"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: mongodb-community
+    description: "Homebrew MongoDB"
+    priority: 1
+
+  - type: docker
+    os: [all]
+    image: "mongo:7.0"
+    description: "Docker container (recommended)"
+    priority: 1
+    command: |
+      docker run -d -p 27017:27017 --name mongodb mongo:7.0
+
+optional_tools:
+  - name: mongodb-compass
+    description: "MongoDB GUI"
+    recommended: false
+
+environment_vars:
+  MONGO_URI: "mongodb://localhost:27017"
+
+post_install:
+  - "mongod --version"
+
+verify_commands:
+  - "mongod --version"
+
+compatible_with:
+  - python3
+  - nodejs
+  - docker
+
+system_requirements:
+  disk_space: "2GB"
+  memory: "2GB minimum"

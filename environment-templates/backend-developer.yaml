@@ -1,0 +1,58 @@
+# Backend Developer Template
+name: backend-developer
+description: "Complete environment for backend development"
+category: backend
+recommended_for:
+  - Backend developers
+  - API developers
+  - Server-side developers
+
+required_tools:
+  - name: python3
+    version: "3.11+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: docker
+    version: "20+"
+  - name: postgresql
+    version: "15+"
+  - name: redis
+    version: "7.0+"
+  - name: fastapi
+    version: "0.100+"
+
+optional_tools:
+  - name: django
+    version: "5.0+"
+  - name: nodejs
+    version: "20+"
+  - name: go
+    version: "1.22+"
+  - name: java
+    version: "21+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, python3]
+    description: "安装版本控制和Python"
+  
+  phase_2:
+    name: "数据库"
+    tools: [postgresql, redis]
+    description: "安装数据库和缓存"
+  
+  phase_3:
+    name: "框架"
+    tools: [fastapi, docker]
+    description: "安装Web框架和容器"
+
+post_install_steps:
+  - "pip install uvicorn gunicorn"
+  - "pip install sqlalchemy alembic"
+  - "echo '后端开发环境准备完成!'"
+
+compatible_templates:
+  - web-developer

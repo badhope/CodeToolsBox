@@ -1,0 +1,69 @@
+# PHP Programming Language
+name: php
+category: programming-language
+description: "PHP - server-side scripting for web development"
+version: "8.3"
+latest_version: "8.3"
+homepage: "https://www.php.net/"
+documentation: "https://www.php.net/docs.php"
+license: "PHP License"
+author: "PHP Group"
+
+tags:
+  - php
+  - web-development
+  - laravel
+  - wordpress
+  - backend
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: php php-cli php-fpm php-mysql php-pgsql php-redis
+    description: "PHP from apt"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: php
+    description: "Homebrew PHP"
+    priority: 1
+
+  - type: manual
+    os: [windows]
+    url: "https://windows.php.net/download/"
+    description: "Windows PHP"
+    priority: 2
+
+optional_tools:
+  - name: composer
+    description: "PHP package manager"
+    recommended: true
+  - name: laravel
+    description: "Laravel framework"
+    recommended: true
+
+environment_vars:
+  PATH: "/usr/local/bin:$PATH"
+
+post_install:
+  - "php -v"
+  - "curl -sS https://getcomposer.org/installer | php"
+
+verify_commands:
+  - "php --version"
+
+compatible_with:
+  - apache
+  - nginx
+  - mysql
+  - postgresql
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "512MB minimum"

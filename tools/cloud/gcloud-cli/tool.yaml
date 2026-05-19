@@ -1,0 +1,54 @@
+# Google Cloud CLI
+name: gcloud-cli
+category: cloud
+description: "gcloud CLI - command-line interface for Google Cloud Platform"
+version: "455"
+latest_version: "455"
+homepage: "https://cloud.google.com/sdk/docs/install"
+documentation: "https://cloud.google.com/sdk/docs/reference"
+license: "Apache 2.0"
+author: "Google"
+
+tags:
+  - gcloud
+  - google-cloud
+  - cloud
+  - cli
+  - devops
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: curl
+    os: [linux, macos]
+    description: "Official installer"
+    priority: 1
+    command: |
+      curl https://sdk.cloud.google.com | bash
+
+  - type: brew
+    os: [macos]
+    package_name: google-cloud-sdk
+    description: "Homebrew"
+    priority: 1
+
+environment_vars:
+  PATH: "$HOME/google-cloud-sdk/bin:$PATH"
+
+post_install:
+  - "gcloud --version"
+  - "gcloud init"
+
+verify_commands:
+  - "gcloud --version"
+
+compatible_with:
+  - terraform
+  - kubectl
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "512MB minimum"

@@ -356,14 +356,58 @@ python3 examples/agent_integration.py
 
 ## 🎯 Environment Templates
 
-Get started quickly with pre-configured environments:
+Get started quickly with pre-configured environments. We support **23+ development profiles**:
 
-| Template | Description | Tools Included |
-|----------|-------------|----------------|
-| **web-developer** | Full-stack web dev | git, nodejs, python3, docker, postgresql, redis, vscode |
-| **ai-ml-developer** | AI/ML & data science | git, python3, docker, vscode, jupyter, pytorch, pandas |
+### Web Development
+| Template | Description | Key Tools |
+|----------|-------------|-----------|
+| **fullstack-developer** | Full-stack web developer | git, nodejs, python3, docker, postgresql, redis, react, nextjs |
+| **frontend-developer** | Frontend specialist | git, nodejs, vscode, react, vue, typescript |
+| **backend-developer** | Backend specialist | git, python3, docker, postgresql, redis, fastapi, django |
+
+### AI & Machine Learning
+| Template | Description | Key Tools |
+|----------|-------------|-----------|
+| **ai-ml-developer** | AI/ML developer | git, python3, docker, vscode, jupyter, pytorch, tensorflow |
+| **ai-agent-developer** | AI Agent builder | git, python3, docker, redis, pytorch, huggingface |
+| **ml-engineer** | ML engineer | git, python3, docker, pytorch, tensorflow, jupyter |
+| **data-science** | Data scientist | git, python3, jupyter, pandas, numpy, scikit-learn |
+
+### Big Data & Data Engineering
+| Template | Description | Key Tools |
+|----------|-------------|-----------|
+| **big-data-engineer** | Big data engineer | git, java, python3, spark, hadoop, kafka |
+| **data-engineering** | Data engineer | git, python3, java, spark, dbt, airflow |
+
+### DevOps & Cloud
+| Template | Description | Key Tools |
+|----------|-------------|-----------|
+| **devops-engineer** | DevOps engineer | git, docker, kubectl, terraform, ansible |
+| **cloud-native-developer** | Cloud native dev | git, docker, kubectl, helm, terraform, go |
+| **sysadmin** | System administrator | git, python3, docker, ansible, terraform |
+
+### Mobile & Game Development
+| Template | Description | Key Tools |
+|----------|-------------|-----------|
 | **mobile-developer** | Mobile app dev | git, nodejs, java, vscode, react-native, android-sdk |
-| **devops-engineer** | DevOps & cloud native | git, docker, kubectl, helm, terraform, vscode |
+| **game-developer** | Game developer | git, c-cpp, unity, python3 |
+
+### Specialized
+| Template | Description | Key Tools |
+|----------|-------------|-----------|
+| **blockchain-developer** | Blockchain dev | git, nodejs, ethereum, docker |
+| **iot-developer** | IoT developer | git, python3, arduino, raspberry-pi, mqtt |
+| **embedded-developer** | Embedded dev | git, c-cpp, arduino, esp32, cmake |
+| **security-engineer** | Security engineer | git, python3, docker, openssl, go |
+| **qa-engineer** | QA/testing engineer | git, python3, nodejs, docker, postgresql |
+
+### Language-Specific
+| Template | Description | Key Tools |
+|----------|-------------|-----------|
+| **python-developer** | Python specialist | git, python3, vscode, poetry, docker |
+| **java-developer** | Java specialist | git, java, vscode, maven, docker |
+| **go-developer** | Go specialist | git, go, vscode, docker, kubernetes |
+| **rust-developer** | Rust specialist | git, rust, vscode, cargo |
 
 Apply a template:
 ```python

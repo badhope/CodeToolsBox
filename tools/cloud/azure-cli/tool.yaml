@@ -1,0 +1,54 @@
+# Azure CLI
+name: azure-cli
+category: cloud
+description: "Azure CLI - command-line interface for Microsoft Azure"
+version: "2.57"
+latest_version: "2.57"
+homepage: "https://learn.microsoft.com/en-us/cli/azure/"
+documentation: "https://learn.microsoft.com/en-us/cli/azure/reference-index"
+license: "MIT"
+author: "Microsoft"
+
+tags:
+  - azure
+  - cloud
+  - cli
+  - devops
+  - infrastructure
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: curl
+    os: [linux, macos]
+    description: "Official installer"
+    priority: 1
+    command: |
+      curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+  - type: brew
+    os: [macos]
+    package_name: azure-cli
+    description: "Homebrew"
+    priority: 1
+
+environment_vars:
+  AZURE_CONFIG_DIR: "$HOME/.azure"
+
+post_install:
+  - "az --version"
+  - "az login"
+
+verify_commands:
+  - "az --version"
+
+compatible_with:
+  - terraform
+  - ansible
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "512MB minimum"

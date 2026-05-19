@@ -1,0 +1,49 @@
+# Blockchain Developer Template
+name: blockchain-developer
+description: "Complete environment for blockchain development"
+category: blockchain
+recommended_for:
+  - Blockchain developers
+  - Smart contract developers
+  - Web3 developers
+
+required_tools:
+  - name: nodejs
+    version: "20+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: ethereum
+    version: "12+"
+  - name: docker
+    version: "20+"
+  - name: python3
+    version: "3.11+"
+
+optional_tools:
+  - name: rust
+    version: "1.77+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, nodejs]
+    description: "安装版本控制和Node.js"
+  
+  phase_2:
+    name: "区块链工具"
+    tools: [ethereum]
+    description: "安装以太坊开发工具"
+  
+  phase_3:
+    name: "容器"
+    tools: [docker]
+    description: "安装Docker用于节点"
+
+post_install_steps:
+  - "npm install -g hardhat"
+  - "echo '区块链开发环境准备完成!'"
+
+compatible_templates:
+  - web-developer

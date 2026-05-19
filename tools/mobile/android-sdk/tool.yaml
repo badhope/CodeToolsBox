@@ -1,0 +1,55 @@
+# Android SDK
+name: android-sdk
+category: mobile
+description: "Android SDK - tools for building Android apps"
+version: "34"
+latest_version: "34"
+homepage: "https://developer.android.com/studio"
+documentation: "https://developer.android.com/docs"
+license: "Apache 2.0"
+author: "Google"
+
+tags:
+  - android
+  - mobile
+  - sdk
+  - development
+  - java
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: manual
+    os: [all]
+    url: "https://developer.android.com/studio#downloads"
+    description: "Android Studio"
+    priority: 1
+
+  - type: sdkmanager
+    os: [all]
+    description: "Command-line tools"
+    priority: 2
+    command: |
+      wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
+      unzip commandlinetools-linux-11076708_latest.zip
+
+environment_vars:
+  ANDROID_HOME: "$HOME/Android/Sdk"
+  PATH: "$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
+
+post_install:
+  - "sdkmanager --list"
+
+verify_commands:
+  - "adb version"
+
+compatible_with:
+  - java
+  - flutter
+
+system_requirements:
+  disk_space: "10GB"
+  memory: "4GB minimum"

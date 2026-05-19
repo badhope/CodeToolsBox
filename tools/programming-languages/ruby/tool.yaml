@@ -1,0 +1,74 @@
+# Ruby Programming Language
+name: ruby
+category: programming-language
+description: "Ruby - elegant, dynamic programming language"
+version: "3.2"
+latest_version: "3.2"
+homepage: "https://www.ruby-lang.org/"
+documentation: "https://ruby-doc.org/"
+license: "Ruby License"
+author: "Ruby Core Team"
+
+tags:
+  - ruby
+  - rails
+  - web-development
+  - scripting
+  - automation
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: rbenv
+    os: [linux, macos]
+    description: "Ruby Version Manager (recommended)"
+    priority: 1
+    command: |
+      git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+      echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+      echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+      source ~/.bashrc
+      rbenv install 3.2.0
+      rbenv global 3.2.0
+
+  - type: brew
+    os: [macos]
+    package_name: ruby
+    description: "Homebrew Ruby"
+    priority: 2
+
+  - type: apt
+    os: [linux]
+    package_name: ruby ruby-dev
+    description: "System Ruby"
+    priority: 3
+
+optional_tools:
+  - name: rails
+    description: "Ruby on Rails framework"
+    recommended: true
+  - name: bundler
+    description: "Dependency manager"
+    recommended: true
+
+environment_vars:
+  PATH: "$HOME/.rbenv/bin:$PATH"
+
+post_install:
+  - "gem install bundler"
+
+verify_commands:
+  - "ruby --version"
+  - "gem --version"
+
+compatible_with:
+  - rails
+  - postgresql
+  - redis
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "512MB minimum"

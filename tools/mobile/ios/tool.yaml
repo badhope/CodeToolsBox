@@ -1,0 +1,50 @@
+# iOS Development Tools
+name: ios
+category: mobile
+description: "iOS Development - tools for building iOS apps"
+version: "17"
+latest_version: "17"
+homepage: "https://developer.apple.com/xcode/"
+documentation: "https://developer.apple.com/documentation/"
+license: "Apple EULA"
+author: "Apple"
+
+tags:
+  - ios
+  - mobile
+  - swift
+  - xcode
+  - apple
+
+supported_os:
+  - macos
+
+installation_sources:
+  - type: appstore
+    os: [macos]
+    description: "Xcode from App Store"
+    priority: 1
+
+  - type: xcode-select
+    os: [macos]
+    description: "Command line tools"
+    priority: 2
+    command: |
+      xcode-select --install
+
+environment_vars:
+  DEVELOPER_DIR: "/Applications/Xcode.app/Contents/Developer"
+
+post_install:
+  - "xcodebuild -version"
+
+verify_commands:
+  - "xcodebuild -version"
+
+compatible_with:
+  - swift
+  - cocoapods
+
+system_requirements:
+  disk_space: "25GB"
+  memory: "8GB minimum"

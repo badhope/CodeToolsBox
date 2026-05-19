@@ -22,10 +22,25 @@ class DevelopmentStyle(Enum):
     FRONTEND = "frontend"
     BACKEND = "backend"
     AI_ML = "ai-ml"
+    AI_AGENT = "ai-agent"
     DEVOPS = "devops"
+    CLOUD_NATIVE = "cloud-native"
     MOBILE = "mobile"
     DATA_SCIENCE = "data-science"
+    BIG_DATA = "big-data"
+    DATA_ENGINEERING = "data-engineering"
+    ML_ENGINEER = "ml-engineer"
     GAME_DEVELOPMENT = "game-dev"
+    BLOCKCHAIN = "blockchain"
+    IOT = "iot"
+    EMBEDDED = "embedded"
+    SECURITY = "security"
+    QA = "qa"
+    SYSADMIN = "sysadmin"
+    PYTHON = "python"
+    JAVA = "java"
+    GO = "go"
+    RUST = "rust"
 
 
 class ProjectSize(Enum):
@@ -89,28 +104,113 @@ class SmartRecommender:
             },
             "frontend": {
                 "must_have": ["git", "nodejs", "vscode"],
-                "recommended": ["eslint", "prettier", "tailwindcss"],
-                "optional": ["typescript"]
+                "recommended": ["eslint", "prettier", "tailwindcss", "react"],
+                "optional": ["typescript", "vue", "angular"]
             },
             "backend": {
                 "must_have": ["git", "python3", "docker", "postgresql"],
-                "recommended": ["redis", "nginx"],
-                "optional": ["kubernetes"]
+                "recommended": ["redis", "nginx", "fastapi", "django"],
+                "optional": ["kubernetes", "go", "java"]
             },
             "ai-ml": {
                 "must_have": ["git", "python3", "vscode", "docker"],
                 "recommended": ["pytorch", "jupyter", "pandas", "numpy"],
-                "optional": ["tensorflow", "mlflow"]
+                "optional": ["tensorflow", "mlflow", "huggingface"]
+            },
+            "ai-agent": {
+                "must_have": ["git", "python3", "docker", "redis"],
+                "recommended": ["pytorch", "huggingface", "jupyter", "postgresql"],
+                "optional": ["langchain", "llama-index", "fastapi"]
             },
             "devops": {
                 "must_have": ["git", "docker", "kubectl"],
-                "recommended": ["terraform", "helm", "minikube"],
-                "optional": ["ansible"]
+                "recommended": ["terraform", "helm", "aws-cli"],
+                "optional": ["ansible", "gcloud-cli", "azure-cli"]
+            },
+            "cloud-native": {
+                "must_have": ["git", "docker", "kubectl"],
+                "recommended": ["helm", "terraform", "go"],
+                "optional": ["istio", "prometheus", "grafana"]
             },
             "mobile": {
                 "must_have": ["git", "nodejs", "vscode"],
                 "recommended": ["java", "react-native", "android-sdk"],
-                "optional": ["flutter"]
+                "optional": ["flutter", "ios"]
+            },
+            "data-science": {
+                "must_have": ["git", "python3", "jupyter", "docker"],
+                "recommended": ["pandas", "numpy", "scikit-learn", "matplotlib"],
+                "optional": ["pytorch", "tensorflow", "huggingface"]
+            },
+            "big-data": {
+                "must_have": ["git", "java", "python3", "docker"],
+                "recommended": ["spark", "hadoop", "kafka"],
+                "optional": ["hive", "elasticsearch"]
+            },
+            "data-engineering": {
+                "must_have": ["git", "python3", "java", "docker"],
+                "recommended": ["spark", "dbt", "airflow", "postgresql"],
+                "optional": ["kafka", "kubeflow"]
+            },
+            "ml-engineer": {
+                "must_have": ["git", "python3", "docker", "vscode"],
+                "recommended": ["pytorch", "tensorflow", "jupyter", "huggingface"],
+                "optional": ["spark", "kubeflow", "mlflow"]
+            },
+            "game-dev": {
+                "must_have": ["git", "c-cpp"],
+                "recommended": ["unity", "python3"],
+                "optional": ["unreal", "docker"]
+            },
+            "blockchain": {
+                "must_have": ["git", "nodejs"],
+                "recommended": ["ethereum", "docker", "python3"],
+                "optional": ["rust", "solana"]
+            },
+            "iot": {
+                "must_have": ["git", "python3", "arduino"],
+                "recommended": ["docker", "raspberry-pi", "mqtt"],
+                "optional": ["esp32", "c-cpp"]
+            },
+            "embedded": {
+                "must_have": ["git", "c-cpp"],
+                "recommended": ["arduino", "esp32", "cmake"],
+                "optional": ["python3", "raspberry-pi"]
+            },
+            "security": {
+                "must_have": ["git", "python3", "docker"],
+                "recommended": ["openssl", "go"],
+                "optional": ["metasploit", "burp-suite"]
+            },
+            "qa": {
+                "must_have": ["git", "python3", "nodejs"],
+                "recommended": ["docker", "postgresql"],
+                "optional": ["java", "selenium"]
+            },
+            "sysadmin": {
+                "must_have": ["git", "python3"],
+                "recommended": ["docker", "ansible", "terraform"],
+                "optional": ["aws-cli", "kubectl"]
+            },
+            "python": {
+                "must_have": ["git", "python3", "vscode"],
+                "recommended": ["pip", "poetry", "docker"],
+                "optional": ["django", "fastapi", "jupyter"]
+            },
+            "java": {
+                "must_have": ["git", "java", "vscode"],
+                "recommended": ["maven", "docker", "spring-boot"],
+                "optional": ["gradle", "kubernetes"]
+            },
+            "go": {
+                "must_have": ["git", "go", "vscode"],
+                "recommended": ["docker", "kubernetes"],
+                "optional": ["terraform"]
+            },
+            "rust": {
+                "must_have": ["git", "rust", "vscode"],
+                "recommended": ["cargo", "rust-analyzer"],
+                "optional": ["docker", "wasm-tools"]
             }
         }
 
@@ -258,12 +358,29 @@ class SmartRecommender:
     def find_best_environment_template(self, context: UserContext) -> Optional[str]:
         """Find the best environment template for the context"""
         template_mapping = {
-            DevelopmentStyle.FULL_STACK: "web-developer",
-            DevelopmentStyle.FRONTEND: "web-developer",
-            DevelopmentStyle.BACKEND: "web-developer",
+            DevelopmentStyle.FULL_STACK: "fullstack-developer",
+            DevelopmentStyle.FRONTEND: "frontend-developer",
+            DevelopmentStyle.BACKEND: "backend-developer",
             DevelopmentStyle.AI_ML: "ai-ml-developer",
+            DevelopmentStyle.AI_AGENT: "ai-agent-developer",
             DevelopmentStyle.DEVOPS: "devops-engineer",
+            DevelopmentStyle.CLOUD_NATIVE: "cloud-native-developer",
             DevelopmentStyle.MOBILE: "mobile-developer",
+            DevelopmentStyle.DATA_SCIENCE: "ai-ml-developer",
+            DevelopmentStyle.BIG_DATA: "big-data-engineer",
+            DevelopmentStyle.DATA_ENGINEERING: "data-engineering",
+            DevelopmentStyle.ML_ENGINEER: "ml-engineer",
+            DevelopmentStyle.GAME_DEVELOPMENT: "game-developer",
+            DevelopmentStyle.BLOCKCHAIN: "blockchain-developer",
+            DevelopmentStyle.IOT: "iot-developer",
+            DevelopmentStyle.EMBEDDED: "embedded-developer",
+            DevelopmentStyle.SECURITY: "security-engineer",
+            DevelopmentStyle.QA: "qa-engineer",
+            DevelopmentStyle.SYSADMIN: "sysadmin",
+            DevelopmentStyle.PYTHON: "backend-developer",
+            DevelopmentStyle.JAVA: "backend-developer",
+            DevelopmentStyle.GO: "cloud-native-developer",
+            DevelopmentStyle.RUST: "embedded-developer",
         }
         return template_mapping.get(context.development_style)
 

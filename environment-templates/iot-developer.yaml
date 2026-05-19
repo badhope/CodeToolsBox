@@ -1,0 +1,54 @@
+# IoT Developer Template
+name: iot-developer
+description: "Complete environment for IoT development"
+category: iot
+recommended_for:
+  - IoT developers
+  - Hardware developers
+  - Embedded engineers
+
+required_tools:
+  - name: python3
+    version: "3.11+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: arduino
+    version: "2.2+"
+  - name: raspberry-pi
+    version: "64+"
+  - name: docker
+    version: "20+"
+  - name: mqtt
+    version: "5.0+"
+
+optional_tools:
+  - name: esp32
+    version: "5.2+"
+  - name: c-cpp
+    version: "14+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, python3]
+    description: "安装版本控制和Python"
+  
+  phase_2:
+    name: "IoT硬件"
+    tools: [arduino, raspberry-pi]
+    description: "安装硬件开发工具"
+  
+  phase_3:
+    name: "通信"
+    tools: [mqtt, docker]
+    description: "安装MQTT和容器"
+
+post_install_steps:
+  - "pip install paho-mqtt"
+  - "pip install RPi.GPIO"
+  - "echo 'IoT开发环境准备完成!'"
+
+compatible_templates:
+  - embedded-developer

@@ -1,0 +1,61 @@
+# Jupyter Notebook
+name: jupyter
+category: ai-ml
+description: "Jupyter - interactive computing environment"
+version: "7.0"
+latest_version: "7.0"
+homepage: "https://jupyter.org/"
+documentation: "https://docs.jupyter.org/"
+license: "BSD"
+author: "Jupyter Project"
+
+tags:
+  - jupyter
+  - notebooks
+  - data-science
+  - python
+  - interactive
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: jupyter
+    description: "pip installation"
+    priority: 1
+
+  - type: pip-full
+    os: [all]
+    package_name: "jupyterlab pandas numpy matplotlib scikit-learn"
+    description: "Full data science stack"
+    priority: 2
+
+optional_tools:
+  - name: jupyterlab
+    description: "Jupyter Lab"
+    recommended: true
+  - name: nbconvert
+    description: "Notebook conversion"
+    recommended: false
+
+environment_vars:
+  JUPYTER_PORT: "8888"
+
+post_install:
+  - "jupyter --version"
+
+verify_commands:
+  - "jupyter --version"
+
+compatible_with:
+  - python3
+  - pandas
+  - numpy
+
+system_requirements:
+  disk_space: "2GB"
+  memory: "2GB minimum"

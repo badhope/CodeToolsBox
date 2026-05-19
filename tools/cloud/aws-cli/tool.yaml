@@ -1,0 +1,57 @@
+# AWS CLI
+name: aws-cli
+category: cloud
+description: "AWS CLI - command-line interface for Amazon Web Services"
+version: "2.15"
+latest_version: "2.15"
+homepage: "https://aws.amazon.com/cli/"
+documentation: "https://docs.aws.amazon.com/cli/"
+license: "Apache 2.0"
+author: "Amazon"
+
+tags:
+  - aws
+  - cloud
+  - cli
+  - devops
+  - infrastructure
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: curl
+    os: [linux, macos]
+    description: "Official installer"
+    priority: 1
+    command: |
+      curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      unzip awscliv2.zip
+      sudo ./aws/install
+
+  - type: brew
+    os: [macos]
+    package_name: awscli
+    description: "Homebrew"
+    priority: 1
+
+environment_vars:
+  AWS_CONFIG_FILE: "$HOME/.aws/config"
+  AWS_SHARED_CREDENTIALS_FILE: "$HOME/.aws/credentials"
+
+post_install:
+  - "aws --version"
+  - "aws configure"
+
+verify_commands:
+  - "aws --version"
+
+compatible_with:
+  - terraform
+  - ansible
+
+system_requirements:
+  disk_space: "200MB"
+  memory: "256MB minimum"

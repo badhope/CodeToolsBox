@@ -1,0 +1,55 @@
+# FastAPI Framework
+name: fastapi
+category: framework
+description: "FastAPI - modern, fast web framework for building APIs"
+version: "0.104"
+latest_version: "0.104"
+homepage: "https://fastapi.tiangolo.com/"
+documentation: "https://fastapi.tiangolo.com/docs/"
+license: "MIT"
+author: "Sebastian Ramirez"
+
+tags:
+  - fastapi
+  - python
+  - api
+  - async
+  - modern
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: fastapi uvicorn
+    description: "pip installation"
+    priority: 1
+
+optional_tools:
+  - name: pydantic
+    description: "Data validation"
+    recommended: true
+  - name: sqlalchemy
+    description: "ORM"
+    recommended: true
+
+environment_vars:
+  PYTHONPATH: "."
+
+post_install:
+  - "python -c 'import fastapi; print(fastapi.__version__)'"
+
+verify_commands:
+  - "python -c 'import fastapi; print(fastapi.__version__)'"
+
+compatible_with:
+  - python3
+  - uvicorn
+  - pydantic
+
+system_requirements:
+  disk_space: "200MB"
+  memory: "512MB minimum"

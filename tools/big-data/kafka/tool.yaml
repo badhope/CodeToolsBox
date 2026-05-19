@@ -1,0 +1,59 @@
+# Apache Kafka
+name: kafka
+category: big-data
+description: "Apache Kafka - distributed streaming platform"
+version: "3.6"
+latest_version: "3.6"
+homepage: "https://kafka.apache.org/"
+documentation: "https://kafka.apache.org/documentation/"
+license: "Apache 2.0"
+author: "Apache Software Foundation"
+
+tags:
+  - kafka
+  - streaming
+  - messaging
+  - real-time
+  - event-driven
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: manual
+    os: [all]
+    url: "https://www.apache.org/dyn/closer.cgi?path=/kafka/3.6.0/kafka_2.13-3.6.0.tgz"
+    description: "Manual download"
+    priority: 1
+    command: |
+      wget https://dlcdn.apache.org/kafka/3.6.0/kafka_2.13-3.6.0.tgz
+      tar -xzf kafka_2.13-3.6.0.tgz
+      sudo mv kafka_2.13-3.6.0 /opt/kafka
+
+  - type: docker
+    os: [all]
+    image: "bitnami/kafka:3.6.0"
+    description: "Docker container"
+    priority: 1
+    command: |
+      docker run -d --name kafka -p 9092:9092 bitnami/kafka:3.6.0
+
+environment_vars:
+  KAFKA_HOME: "/opt/kafka"
+  PATH: "$KAFKA_HOME/bin:$PATH"
+
+post_install:
+  - "kafka-topics.sh --version"
+
+verify_commands:
+  - "kafka-topics.sh --version"
+
+compatible_with:
+  - java
+  - zookeeper
+
+system_requirements:
+  disk_space: "5GB"
+  memory: "4GB minimum"

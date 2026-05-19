@@ -1,147 +1,56 @@
-# DevOps & Cloud Native Environment
+# DevOps Engineer Template
 name: devops-engineer
-description: "DevOps and cloud native development environment"
-version: "1.0"
-category: environment-template
-author: "Global-Dev-Setup"
+description: "Complete environment for DevOps engineering"
+category: devops
+recommended_for:
+  - DevOps engineers
+  - SRE engineers
+  - Infrastructure engineers
 
-# Core tools
-core_tools:
-  - name: git
-    required: true
-    description: "Version control"
+required_tools:
   - name: docker
-    required: true
-    description: "Container runtime"
-  - name: vscode
-    required: true
-    description: "Code editor"
-  - name: python3
-    required: true
-    description: "Scripting and automation"
-
-# Kubernetes tools
-kubernetes_tools:
+    version: "20+"
+  - name: git
+    version: "2.30+"
   - name: kubectl
-    required: true
-    description: "Kubernetes CLI"
-  - name: helm
-    required: false
-    default: true
-    description: "Helm package manager"
-  - name: kustomize
-    required: false
-    default: true
-    description: "Kustomize"
-  - name: minikube
-    required: false
-    default: true
-    description: "Local Kubernetes"
+    version: "1.29+"
 
-# CI/CD tools
-ci_cd_tools:
-  - name: github-cli
-    required: false
-    default: true
-    description: "GitHub CLI"
-  - name: gitlab-cli
-    required: false
-    default: false
-    description: "GitLab CLI"
-
-# Infrastructure as Code
-iac_tools:
+recommended_tools:
   - name: terraform
-    required: false
-    default: true
-    description: "Terraform IaC"
+    version: "1.7+"
   - name: ansible
-    required: false
-    default: false
-    description: "Ansible automation"
-
-# Cloud tools
-cloud_tools:
+    version: "9.0+"
+  - name: helm
+    version: "3.14+"
   - name: aws-cli
-    required: false
-    default: false
-    description: "AWS CLI"
+    version: "2.15+"
+
+optional_tools:
   - name: gcloud-cli
-    required: false
-    default: false
-    description: "Google Cloud CLI"
+    version: "455+"
   - name: azure-cli
-    required: false
-    default: false
-    description: "Azure CLI"
+    version: "2.57+"
+  - name: go
+    version: "1.22+"
 
-# Monitoring and observability
-observability_tools:
-  - name: kubectl
-    required: true
-    description: "Kubernetes CLI"
-  - name: prometheus
-    required: false
-    default: false
-    description: "Prometheus monitoring"
-  - name: grafana
-    required: false
-    default: false
-    description: "Grafana dashboards"
+installation_phases:
+  phase_1:
+    name: "容器"
+    tools: [git, docker, kubectl]
+    description: "安装容器和Kubernetes"
+  
+  phase_2:
+    name: "基础设施"
+    tools: [terraform, ansible]
+    description: "安装基础设施管理工具"
+  
+  phase_3:
+    name: "云CLI"
+    tools: [aws-cli, helm]
+    description: "安装云CLI和Helm"
 
-# VS Code extensions
-vscode_extensions:
-  - eamodio.gitlens
-  - ms-azuretools.vscode-docker
-  - ms-kubernetes-tools.vscode-kubernetes-tools
-  - hashicorp.terraform
-  - redhat.vscode-yaml
-  - redhat.vscode-yaml
+post_install_steps:
+  - "echo 'DevOps工程环境准备完成!'"
 
-# Environment configuration
-env_config:
-  kubernetes_enabled: true
-  docker_enabled: true
-  cloud_provider: "none"
-  iac: "terraform"
-  cicd: "github-actions"
-
-# Quick start
-quick_start:
-  - description: "Start Minikube"
-    command: "minikube start"
-  - description: "Deploy application"
-    command: "kubectl apply -f k8s/"
-  - description: "Initialize Terraform"
-    command: "terraform init"
-
-# Project templates
-project_templates:
-  - name: k8s-app-template
-    description: "Kubernetes application template"
-    url: "https://github.com/..."
-  - name: terraform-module
-    description: "Terraform module template"
-    url: "https://github.com/..."
-  - name: github-actions-ci
-    description: "GitHub Actions CI/CD template"
-    url: "https://github.com/..."
-
-# Estimated setup time
-estimated_setup_time: "30-60 minutes"
-
-# System requirements
-system_requirements:
-  disk_space: "15GB minimum"
-  memory: "16GB recommended"
-  architecture: ["amd64", "arm64"]
-
-# Tags
-tags:
-  - devops
-  - kubernetes
-  - cloud-native
-  - terraform
-  - docker
-  - ci-cd
-  - automation
+compatible_templates:
+  - cloud-native-developer

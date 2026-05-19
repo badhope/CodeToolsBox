@@ -1,0 +1,71 @@
+# Rust Programming Language
+name: rust
+category: programming-language
+description: "Rust - blazingly fast, memory-safe systems programming language"
+version: "1.77"
+latest_version: "1.77"
+homepage: "https://www.rust-lang.org/"
+documentation: "https://doc.rust-lang.org/"
+license: "MIT/Apache 2.0"
+author: "Rust Project"
+
+tags:
+  - rust
+  - systems-programming
+  - memory-safe
+  - high-performance
+  - wasm
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: curl
+    os: [linux, macos]
+    description: "Rustup installer (recommended)"
+    priority: 1
+    command: |
+      curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+      source "$HOME/.cargo/env"
+
+  - type: brew
+    os: [macos]
+    package_name: rust
+    description: "Homebrew installation"
+    priority: 2
+
+  - type: apt
+    os: [linux]
+    package_name: rustc cargo
+    description: "System packages"
+    priority: 3
+
+optional_tools:
+  - name: rust-analyzer
+    description: "Rust language server"
+    recommended: true
+  - name: cargo-edit
+    description: "Cargo add/rm/edit"
+    recommended: true
+
+environment_vars:
+  PATH: "$HOME/.cargo/bin:$PATH"
+
+post_install:
+  - "rustup update"
+  - "cargo install cargo-edit"
+
+verify_commands:
+  - "rustc --version"
+  - "cargo --version"
+
+compatible_with:
+  - nodejs
+  - docker
+  - wasm-tools
+
+system_requirements:
+  disk_space: "2GB"
+  memory: "1GB minimum"

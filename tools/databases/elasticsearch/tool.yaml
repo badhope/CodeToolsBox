@@ -1,0 +1,69 @@
+# Elasticsearch
+name: elasticsearch
+category: database
+description: "Elasticsearch - distributed search and analytics engine"
+version: "8.13"
+latest_version: "8.13"
+homepage: "https://www.elastic.co/"
+documentation: "https://www.elastic.co/guide/index.html"
+license: "Elastic License"
+author: "Elastic"
+
+tags:
+  - elasticsearch
+  - search
+  - analytics
+  - log-analysis
+  - big-data
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: elasticsearch
+    description: "Elasticsearch from apt"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: elasticsearch-full
+    description: "Homebrew Elasticsearch"
+    priority: 1
+
+  - type: docker
+    os: [all]
+    image: "elasticsearch:8.13.0"
+    description: "Docker container"
+    priority: 1
+    command: |
+      docker run -d -p 9200:9200 -p 9300:9300 --name elasticsearch elasticsearch:8.13.0
+
+optional_tools:
+  - name: kibana
+    description: "Visualization dashboard"
+    recommended: true
+  - name: logstash
+    description: "Data processing pipeline"
+    recommended: false
+
+environment_vars:
+  ELASTICSEARCH_URL: "http://localhost:9200"
+
+post_install:
+  - "curl -X GET 'http://localhost:9200'"
+
+verify_commands:
+  - "curl -X GET 'http://localhost:9200'"
+
+compatible_with:
+  - kibana
+  - logstash
+  - docker
+
+system_requirements:
+  disk_space: "3GB"
+  memory: "4GB minimum"

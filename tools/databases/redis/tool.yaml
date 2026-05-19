@@ -1,0 +1,62 @@
+# Redis In-Memory Database
+name: redis
+category: database
+description: "Redis - in-memory data structure store"
+version: "7.2"
+latest_version: "7.2"
+homepage: "https://redis.io/"
+documentation: "https://redis.io/docs/"
+license: "BSD"
+author: "Redis Labs"
+
+tags:
+  - redis
+  - cache
+  - in-memory
+  - pubsub
+  - real-time
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: redis-server
+    description: "Redis from apt"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: redis
+    description: "Homebrew Redis"
+    priority: 1
+
+  - type: docker
+    os: [all]
+    image: "redis:7.2"
+    description: "Docker container"
+    priority: 1
+    command: |
+      docker run -d -p 6379:6379 --name redis redis:7.2
+
+environment_vars:
+  REDIS_URL: "redis://localhost:6379"
+
+post_install:
+  - "redis-server --version"
+
+verify_commands:
+  - "redis-server --version"
+  - "redis-cli ping"
+
+compatible_with:
+  - python3
+  - nodejs
+  - docker
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "512MB minimum"

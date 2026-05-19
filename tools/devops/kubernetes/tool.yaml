@@ -1,0 +1,70 @@
+# Kubernetes CLI
+name: kubectl
+category: devops
+description: "Kubectl - Kubernetes command-line tool"
+version: "1.29"
+latest_version: "1.29"
+homepage: "https://kubernetes.io/docs/reference/kubectl/"
+documentation: "https://kubernetes.io/docs/reference/kubectl/overview/"
+license: "Apache 2.0"
+author: "Kubernetes"
+
+tags:
+  - kubernetes
+  - kubectl
+  - containers
+  - devops
+  - cloud-native
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: curl
+    os: [linux, macos]
+    description: "Official installation"
+    priority: 1
+    command: |
+      curl -LO "https://dl.k8s.io/release/v1.29.0/bin/linux/amd64/kubectl"
+      chmod +x kubectl
+      sudo mv kubectl /usr/local/bin/
+
+  - type: brew
+    os: [macos]
+    package_name: kubectl
+    description: "Homebrew"
+    priority: 1
+
+  - type: snap
+    os: [linux]
+    package_name: kubectl
+    description: "Snap"
+    priority: 2
+
+optional_tools:
+  - name: helm
+    description: "Kubernetes package manager"
+    recommended: true
+  - name: k9s
+    description: "Kubernetes UI"
+    recommended: true
+
+environment_vars:
+  KUBECONFIG: "$HOME/.kube/config"
+
+post_install:
+  - "kubectl version --client"
+
+verify_commands:
+  - "kubectl version --client"
+
+compatible_with:
+  - docker
+  - helm
+  - terraform
+
+system_requirements:
+  disk_space: "100MB"
+  memory: "256MB minimum"

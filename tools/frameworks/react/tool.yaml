@@ -1,0 +1,62 @@
+# React Framework
+name: react
+category: framework
+description: "React - JavaScript library for building user interfaces"
+version: "18"
+latest_version: "18"
+homepage: "https://react.dev/"
+documentation: "https://react.dev/learn"
+license: "MIT"
+author: "Meta"
+
+tags:
+  - react
+  - frontend
+  - ui
+  - javascript
+  - web-development
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: npm
+    os: [all]
+    package_name: react react-dom
+    description: "npm installation"
+    priority: 1
+
+  - type: create-react-app
+    os: [all]
+    description: "Create React App"
+    priority: 1
+    command: |
+      npx create-react-app my-app
+
+optional_tools:
+  - name: typescript
+    description: "TypeScript support"
+    recommended: true
+  - name: react-router
+    description: "Routing"
+    recommended: true
+
+environment_vars:
+  NODE_ENV: "development"
+
+post_install:
+  - "npm install"
+
+verify_commands:
+  - "node -v"
+
+compatible_with:
+  - nodejs
+  - npm
+  - typescript
+
+system_requirements:
+  disk_space: "500MB"
+  memory: "1GB minimum"

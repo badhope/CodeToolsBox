@@ -1,0 +1,48 @@
+# Game Developer Template
+name: game-developer
+description: "Complete environment for game development"
+category: game-dev
+recommended_for:
+  - Game developers
+  - Unity/Unreal developers
+  - 3D artists
+
+required_tools:
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: unity
+    version: "6000+"
+  - name: c-cpp
+    version: "14+"
+  - name: python3
+    version: "3.11+"
+
+optional_tools:
+  - name: unreal
+    version: "5.4+"
+  - name: docker
+    version: "20+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, c-cpp]
+    description: "安装版本控制和编译工具"
+  
+  phase_2:
+    name: "游戏引擎"
+    tools: [unity]
+    description: "安装Unity游戏引擎"
+  
+  phase_3:
+    name: "脚本语言"
+    tools: [python3]
+    description: "安装Python用于脚本"
+
+post_install_steps:
+  - "echo '游戏开发环境准备完成!'"
+
+compatible_templates:
+  - mobile-developer

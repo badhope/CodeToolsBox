@@ -1,0 +1,46 @@
+# Kubeflow
+name: kubeflow
+category: data-engineering
+description: "Kubeflow - machine learning toolkit for Kubernetes"
+version: "1.8"
+latest_version: "1.8"
+homepage: "https://www.kubeflow.org/"
+documentation: "https://www.kubeflow.org/docs/"
+license: "Apache 2.0"
+author: "Kubeflow"
+
+tags:
+  - kubeflow
+  - mlops
+  - kubernetes
+  - machine-learning
+  - orchestration
+
+supported_os:
+  - linux
+  - macos
+
+installation_sources:
+  - type: kustomize
+    os: [linux, macos]
+    description: "Kubernetes installation"
+    priority: 1
+    command: |
+      kubectl apply -k "github.com/kubeflow/kubeflow/manifests/v1.8-branch/distributed-training"
+
+environment_vars:
+  KUBECONFIG: "$HOME/.kube/config"
+
+post_install:
+  - "kubectl get pods -n kubeflow"
+
+verify_commands:
+  - "kubectl get pods -n kubeflow"
+
+compatible_with:
+  - kubectl
+  - kubernetes
+
+system_requirements:
+  disk_space: "5GB"
+  memory: "8GB minimum"

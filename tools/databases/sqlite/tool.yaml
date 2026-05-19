@@ -1,0 +1,52 @@
+# SQLite
+name: sqlite
+category: database
+description: "SQLite - embedded relational database"
+version: "3.45"
+latest_version: "3.45"
+homepage: "https://www.sqlite.org/"
+documentation: "https://www.sqlite.org/docs.html"
+license: "Public Domain"
+author: "SQLite Development Team"
+
+tags:
+  - sqlite
+  - embedded
+  - lightweight
+  - mobile
+  - testing
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: sqlite3
+    description: "SQLite from apt"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: sqlite
+    description: "Homebrew SQLite"
+    priority: 1
+
+environment_vars:
+  SQLITE_PATH: "/usr/bin/sqlite3"
+
+post_install:
+  - "sqlite3 --version"
+
+verify_commands:
+  - "sqlite3 --version"
+
+compatible_with:
+  - python3
+  - nodejs
+
+system_requirements:
+  disk_space: "100MB"
+  memory: "64MB minimum"

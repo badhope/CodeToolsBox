@@ -1,0 +1,50 @@
+# Flutter Framework
+name: flutter
+category: mobile
+description: "Flutter - cross-platform mobile app framework"
+version: "3.19"
+latest_version: "3.19"
+homepage: "https://flutter.dev/"
+documentation: "https://docs.flutter.dev/"
+license: "BSD"
+author: "Google"
+
+tags:
+  - flutter
+  - mobile
+  - cross-platform
+  - dart
+  - ui
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: manual
+    os: [all]
+    url: "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.0-stable.tar.xz"
+    description: "Manual download"
+    priority: 1
+    command: |
+      wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.0-stable.tar.xz
+      tar xf flutter_linux_3.19.0-stable.tar.xz
+      sudo mv flutter /opt/flutter
+
+environment_vars:
+  PATH: "/opt/flutter/bin:$PATH"
+
+post_install:
+  - "flutter doctor"
+
+verify_commands:
+  - "flutter --version"
+
+compatible_with:
+  - dart
+  - android-sdk
+
+system_requirements:
+  disk_space: "6GB"
+  memory: "4GB minimum"

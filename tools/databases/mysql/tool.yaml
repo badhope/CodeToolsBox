@@ -1,0 +1,67 @@
+# MySQL Database
+name: mysql
+category: database
+description: "MySQL - world's most popular open source database"
+version: "8.3"
+latest_version: "8.3"
+homepage: "https://www.mysql.com/"
+documentation: "https://dev.mysql.com/doc/"
+license: "GPL"
+author: "Oracle"
+
+tags:
+  - mysql
+  - database
+  - relational
+  - sql
+  - web-development
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: mysql-server
+    description: "MySQL from apt"
+    priority: 1
+
+  - type: brew
+    os: [macos]
+    package_name: mysql
+    description: "Homebrew MySQL"
+    priority: 1
+
+  - type: docker
+    os: [all]
+    image: "mysql:8.3"
+    description: "Docker container (recommended)"
+    priority: 1
+    command: |
+      docker run -d -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=secret mysql:8.3
+
+optional_tools:
+  - name: mysql-workbench
+    description: "MySQL GUI client"
+    recommended: false
+
+environment_vars:
+  MYSQL_ROOT_PASSWORD: "password"
+
+post_install:
+  - "mysql --version"
+
+verify_commands:
+  - "mysql --version"
+
+compatible_with:
+  - python3
+  - nodejs
+  - php
+  - docker
+
+system_requirements:
+  disk_space: "2GB"
+  memory: "1GB minimum"

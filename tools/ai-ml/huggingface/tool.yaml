@@ -1,0 +1,55 @@
+# Hugging Face
+name: huggingface
+category: ai-ml
+description: "Hugging Face - natural language processing library"
+version: "4.36"
+latest_version: "4.36"
+homepage: "https://huggingface.co/"
+documentation: "https://huggingface.co/docs/transformers/"
+license: "Apache 2.0"
+author: "Hugging Face"
+
+tags:
+  - huggingface
+  - nlp
+  - transformers
+  - llm
+  - ai
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: transformers datasets accelerate
+    description: "pip installation"
+    priority: 1
+
+optional_tools:
+  - name: peft
+    description: "Parameter-efficient fine-tuning"
+    recommended: true
+  - name: trl
+    description: "Transformer reinforcement learning"
+    recommended: false
+
+environment_vars:
+  HUGGINGFACE_HUB_CACHE: "$HOME/.cache/huggingface"
+
+post_install:
+  - "python -c 'from transformers import pipeline; print(\"Hugging Face ready\")'"
+
+verify_commands:
+  - "python -c 'from transformers import __version__; print(__version__)'"
+
+compatible_with:
+  - python3
+  - torch
+  - tensorflow
+
+system_requirements:
+  disk_space: "5GB minimum"
+  memory: "8GB minimum"

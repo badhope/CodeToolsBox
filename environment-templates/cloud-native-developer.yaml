@@ -1,0 +1,57 @@
+# Cloud Native Developer Template
+name: cloud-native-developer
+description: "Complete environment for cloud native development"
+category: devops
+recommended_for:
+  - Cloud native developers
+  - Kubernetes developers
+  - DevOps engineers
+
+required_tools:
+  - name: docker
+    version: "20+"
+  - name: kubectl
+    version: "1.29+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: helm
+    version: "3.14+"
+  - name: terraform
+    version: "1.7+"
+  - name: aws-cli
+    version: "2.15+"
+  - name: go
+    version: "1.22+"
+
+optional_tools:
+  - name: gcloud-cli
+    version: "455+"
+  - name: azure-cli
+    version: "2.57+"
+  - name: ansible
+    version: "9.0+"
+
+installation_phases:
+  phase_1:
+    name: "容器基础"
+    tools: [git, docker, kubectl]
+    description: "安装容器和Kubernetes CLI"
+  
+  phase_2:
+    name: "K8s工具"
+    tools: [helm]
+    description: "安装Helm包管理器"
+  
+  phase_3:
+    name: "基础设施"
+    tools: [terraform, aws-cli]
+    description: "安装基础设施工具"
+
+post_install_steps:
+  - "helm repo add stable https://charts.helm.sh/stable"
+  - "echo '云原生开发环境准备完成!'"
+
+compatible_templates:
+  - devops-engineer

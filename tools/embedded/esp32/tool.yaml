@@ -1,0 +1,49 @@
+# ESP32 Development
+name: esp32
+category: embedded
+description: "ESP32 - IoT development framework"
+version: "5.2"
+latest_version: "5.2"
+homepage: "https://www.espressif.com/en/products/socs/esp32"
+documentation: "https://docs.espressif.com/projects/esp-idf/en/latest/"
+license: "Apache 2.0"
+author: "Espressif"
+
+tags:
+  - esp32
+  - iot
+  - embedded
+  - microcontroller
+  - wifi
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: manual
+    os: [all]
+    url: "https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/"
+    description: "ESP-IDF"
+    priority: 1
+    command: |
+      git clone --recursive https://github.com/espressif/esp-idf.git
+      cd esp-idf
+      ./install.sh
+
+environment_vars:
+  IDF_PATH: "$HOME/esp/esp-idf"
+
+post_install:
+  - "idf.py --version"
+
+verify_commands:
+  - "idf.py --version"
+
+compatible_with:
+  - c-cpp
+
+system_requirements:
+  disk_space: "5GB"
+  memory: "4GB minimum"

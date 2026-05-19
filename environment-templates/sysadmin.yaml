@@ -1,0 +1,51 @@
+# Systems Administrator Template
+name: sysadmin
+description: "Complete environment for systems administration"
+category: devops
+recommended_for:
+  - System administrators
+  - Linux administrators
+  - Infrastructure managers
+
+required_tools:
+  - name: python3
+    version: "3.11+"
+  - name: git
+    version: "2.30+"
+
+recommended_tools:
+  - name: docker
+    version: "20+"
+  - name: ansible
+    version: "9.0+"
+  - name: terraform
+    version: "1.7+"
+
+optional_tools:
+  - name: aws-cli
+    version: "2.15+"
+  - name: kubectl
+    version: "1.29+"
+
+installation_phases:
+  phase_1:
+    name: "基础工具"
+    tools: [git, python3]
+    description: "安装版本控制和Python"
+  
+  phase_2:
+    name: "自动化工具"
+    tools: [ansible, terraform]
+    description: "安装自动化和基础设施工具"
+  
+  phase_3:
+    name: "容器"
+    tools: [docker]
+    description: "安装Docker"
+
+post_install_steps:
+  - "pip install paramiko fabric"
+  - "echo '系统管理环境准备完成!'"
+
+compatible_templates:
+  - devops-engineer
