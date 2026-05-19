@@ -1,0 +1,29 @@
+# Groovy - Groovy - JVM脚本语言
+name: groovy
+category: programming-language
+description: "Groovy - JVM脚本语言"
+homepage: "https://groovy-lang.org/"
+
+tags:
+  - groovy
+  - jvm
+  - scripting
+  - gradle
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://groovy-lang.org/ for installation instructions
+
+verify_commands:
+  - "groovy --version"
+
+compatible_with: []

@@ -1,0 +1,30 @@
+# Insomnia - Insomnia - API客户端
+name: insomnia
+category: api
+description: "Insomnia - API客户端"
+homepage: "https://insomnia.rest/"
+
+tags:
+  - insomnia
+  - api
+  - rest
+  - graphql
+  - grpc
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://insomnia.rest/ for installation instructions
+
+verify_commands:
+  - "insomnia --version"
+
+compatible_with: []

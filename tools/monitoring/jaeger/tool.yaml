@@ -1,0 +1,30 @@
+# Jaeger - Jaeger - 分布式追踪
+name: jaeger
+category: monitoring
+description: "Jaeger - 分布式追踪"
+homepage: "https://www.jaegertracing.io/"
+
+tags:
+  - jaeger
+  - tracing
+  - distributed
+  - observability
+  - opentracing
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.jaegertracing.io/ for installation instructions
+
+verify_commands:
+  - "jaeger --version"
+
+compatible_with: []

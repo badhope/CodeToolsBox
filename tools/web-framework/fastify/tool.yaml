@@ -1,0 +1,29 @@
+# Fastify - Fastify - 高性能Node.js框架
+name: fastify
+category: web-framework
+description: "Fastify - 高性能Node.js框架"
+homepage: "https://www.fastify.io/"
+
+tags:
+  - fastify
+  - nodejs
+  - high-performance
+  - backend
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.fastify.io/ for installation instructions
+
+verify_commands:
+  - "fastify --version"
+
+compatible_with: []

@@ -1,0 +1,29 @@
+# Erlang - Erlang - 并发编程语言和运行时
+name: erlang
+category: programming-language
+description: "Erlang - 并发编程语言和运行时"
+homepage: "https://www.erlang.org/"
+
+tags:
+  - erlang
+  - concurrency
+  - distributed
+  - telecom
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.erlang.org/ for installation instructions
+
+verify_commands:
+  - "erlang --version"
+
+compatible_with: []

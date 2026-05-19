@@ -1,0 +1,30 @@
+# Elk - ELK Stack - 日志分析套件
+name: elk
+category: devops
+description: "ELK Stack - 日志分析套件"
+homepage: "https://www.elastic.co/what-is/elk-stack"
+
+tags:
+  - elk
+  - elasticsearch
+  - logstash
+  - kibana
+  - logging
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.elastic.co/what-is/elk-stack for installation instructions
+
+verify_commands:
+  - "elk --version"
+
+compatible_with: []

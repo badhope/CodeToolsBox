@@ -1,0 +1,29 @@
+# Ocaml - OCaml - 实用的函数式语言
+name: ocaml
+category: programming-language
+description: "OCaml - 实用的函数式语言"
+homepage: "https://ocaml.org/"
+
+tags:
+  - ocaml
+  - functional
+  - compilers
+  - static-typing
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://ocaml.org/ for installation instructions
+
+verify_commands:
+  - "ocaml --version"
+
+compatible_with: []

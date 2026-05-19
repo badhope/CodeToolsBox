@@ -1,0 +1,30 @@
+# K6 - k6 - 负载测试工具
+name: k6
+category: testing
+description: "k6 - 负载测试工具"
+homepage: "https://k6.io/"
+
+tags:
+  - k6
+  - load-testing
+  - performance
+  - grafana
+  - synthetic
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://k6.io/ for installation instructions
+
+verify_commands:
+  - "k6 --version"
+
+compatible_with: []

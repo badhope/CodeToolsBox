@@ -1,0 +1,30 @@
+# Netlify - Netlify - 现代Web发布平台
+name: netlify
+category: cloud-service
+description: "Netlify - 现代Web发布平台"
+homepage: "https://www.netlify.com/"
+
+tags:
+  - netlify
+  - hosting
+  - jamstack
+  - static
+  - cdn
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.netlify.com/ for installation instructions
+
+verify_commands:
+  - "netlify --version"
+
+compatible_with: []

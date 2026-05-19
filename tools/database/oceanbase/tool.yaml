@@ -1,0 +1,30 @@
+# Oceanbase - OceanBase - 分布式关系数据库
+name: oceanbase
+category: database
+description: "OceanBase - 分布式关系数据库"
+homepage: "https://www.oceanbase.com/"
+
+tags:
+  - oceanbase
+  - distributed
+  - sql
+  - high-availability
+  - alibaba
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.oceanbase.com/ for installation instructions
+
+verify_commands:
+  - "oceanbase --version"
+
+compatible_with: []

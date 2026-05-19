@@ -1,0 +1,30 @@
+# Clojure - Clojure - JVM上的Lisp方言
+name: clojure
+category: programming-language
+description: "Clojure - JVM上的Lisp方言"
+homepage: "https://clojure.org/"
+
+tags:
+  - clojure
+  - lisp
+  - jvm
+  - functional
+  - concurrent
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://clojure.org/ for installation instructions
+
+verify_commands:
+  - "clojure --version"
+
+compatible_with: []

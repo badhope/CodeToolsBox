@@ -1,0 +1,30 @@
+# Kong - Kong - API网关
+name: kong
+category: networking
+description: "Kong - API网关"
+homepage: "https://konghq.com/"
+
+tags:
+  - kong
+  - api-gateway
+  - microservices
+  - plugins
+  - lua
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://konghq.com/ for installation instructions
+
+verify_commands:
+  - "kong --version"
+
+compatible_with: []

@@ -1,0 +1,69 @@
+# TypeScript Programming Language
+name: typescript
+category: programming-language
+description: "TypeScript - JavaScript的超集，添加类型系统"
+version: "5.3"
+latest_version: "5.3"
+homepage: "https://www.typescriptlang.org/"
+documentation: "https://www.typescriptlang.org/docs/"
+license: "Apache 2.0"
+author: "Microsoft"
+
+tags:
+  - typescript
+  - javascript
+  - typed
+  - frontend
+  - backend
+  - nodejs
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: npm
+    os: [all]
+    package_name: typescript
+    description: "npm installation (Recommended)"
+    priority: 1
+    command: |
+      npm install -g typescript
+      npm install -g ts-node
+
+  - type: yarn
+    os: [all]
+    package_name: typescript
+    description: "Yarn installation"
+    priority: 2
+    command: |
+      yarn global add typescript ts-node
+
+  - type: pip
+    os: [all]
+    package_name: pyright
+    description: "Pyright LSP server"
+    priority: 3
+
+optional_tools:
+  - name: vscode
+    description: "VS Code with TypeScript extension"
+    recommended: true
+  - name: ts-node
+    description: "TypeScript execution engine"
+    recommended: true
+  - name: tsc
+    description: "TypeScript compiler"
+    recommended: true
+
+verify_commands:
+  - "tsc --version"
+  - "node --version"
+
+compatible_with:
+  - nodejs
+  - react
+  - vue
+  - angular
+  - nextjs

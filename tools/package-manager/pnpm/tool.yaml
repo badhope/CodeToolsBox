@@ -1,0 +1,30 @@
+# Pnpm - pnpm - 高效Node包管理器
+name: pnpm
+category: package-manager
+description: "pnpm - 高效Node包管理器"
+homepage: "https://pnpm.io/"
+
+tags:
+  - pnpm
+  - npm
+  - nodejs
+  - package-manager
+  - fast
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://pnpm.io/ for installation instructions
+
+verify_commands:
+  - "pnpm --version"
+
+compatible_with: []

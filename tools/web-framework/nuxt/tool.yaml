@@ -1,0 +1,30 @@
+# Nuxt - Nuxt - Vue全栈框架
+name: nuxt
+category: web-framework
+description: "Nuxt - Vue全栈框架"
+homepage: "https://nuxt.com/"
+
+tags:
+  - nuxt
+  - vue
+  - ssr
+  - fullstack
+  - static
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://nuxt.com/ for installation instructions
+
+verify_commands:
+  - "nuxt --version"
+
+compatible_with: []

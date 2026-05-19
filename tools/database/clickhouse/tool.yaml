@@ -1,0 +1,30 @@
+# Clickhouse - ClickHouse - 列式数据库
+name: clickhouse
+category: database
+description: "ClickHouse - 列式数据库"
+homepage: "https://clickhouse.com/"
+
+tags:
+  - clickhouse
+  - olap
+  - columnar
+  - analytics
+  - big-data
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://clickhouse.com/ for installation instructions
+
+verify_commands:
+  - "clickhouse --version"
+
+compatible_with: []

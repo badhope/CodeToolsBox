@@ -1,0 +1,30 @@
+# Loki - Loki - 日志聚合系统
+name: loki
+category: devops
+description: "Loki - 日志聚合系统"
+homepage: "https://grafana.com/oss/loki/"
+
+tags:
+  - loki
+  - logging
+  - grafana
+  - prometheus-like
+  - kubernetes
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://grafana.com/oss/loki/ for installation instructions
+
+verify_commands:
+  - "loki --version"
+
+compatible_with: []

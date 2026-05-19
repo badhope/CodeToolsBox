@@ -1,0 +1,30 @@
+# Clash - Clash - 网络代理工具
+name: clash
+category: networking
+description: "Clash - 网络代理工具"
+homepage: "https://github.com/Dreamacro/clash"
+
+tags:
+  - clash
+  - proxy
+  - vpn
+  - rules
+  - tunnel
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://github.com/Dreamacro/clash for installation instructions
+
+verify_commands:
+  - "clash --version"
+
+compatible_with: []

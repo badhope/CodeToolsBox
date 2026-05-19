@@ -1,0 +1,30 @@
+# Tidb - TiDB - 分布式SQL数据库
+name: tidb
+category: database
+description: "TiDB - 分布式SQL数据库"
+homepage: "https://pingcap.com/"
+
+tags:
+  - tidb
+  - distributed
+  - mysql-compatible
+  - htap
+  - scalable
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://pingcap.com/ for installation instructions
+
+verify_commands:
+  - "tidb --version"
+
+compatible_with: []

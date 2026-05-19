@@ -1,0 +1,59 @@
+# Julia Programming Language
+name: julia
+category: programming-language
+description: "Julia - 高性能动态编程语言"
+version: "1.9"
+latest_version: "1.9"
+homepage: "https://julialang.org/"
+documentation: "https://docs.julialang.org/"
+license: "MIT"
+author: "Julia Language"
+
+tags:
+  - julia
+  - scientific-computing
+  - high-performance
+  - data-science
+  - numerical-computing
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official-binary
+    os: [all]
+    description: "Official binaries (Recommended)"
+    priority: 1
+    command: |
+      wget https://julialang-s3.julialang.org/bin/linux/x64/1.9/julia-1.9.4-linux-x86_64.tar.gz
+      tar -xvzf julia-1.9.4-linux-x86_64.tar.gz
+      sudo mv julia-1.9.4 /opt/julia
+
+  - type: apt
+    os: [linux]
+    package_name: julia
+    description: "APT installation"
+    priority: 2
+
+  - type: brew
+    os: [macos]
+    package_name: julia
+    description: "Homebrew"
+    priority: 1
+
+optional_tools:
+  - name: jupyter
+    description: "Jupyter support"
+    recommended: true
+  - name: vscode-julia
+    description: "VS Code Julia extension"
+    recommended: true
+
+verify_commands:
+  - "julia --version"
+
+compatible_with:
+  - jupyter
+  - vscode

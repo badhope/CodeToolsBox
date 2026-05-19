@@ -1,0 +1,30 @@
+# Sonarqube - SonarQube - 代码质量管理
+name: sonarqube
+category: security
+description: "SonarQube - 代码质量管理"
+homepage: "https://www.sonarqube.org/"
+
+tags:
+  - sonarqube
+  - code-quality
+  - static-analysis
+  - security
+  - clean-code
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.sonarqube.org/ for installation instructions
+
+verify_commands:
+  - "sonarqube --version"
+
+compatible_with: []

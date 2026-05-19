@@ -1,0 +1,29 @@
+# Haskell - Haskell - 纯函数式编程语言
+name: haskell
+category: programming-language
+description: "Haskell - 纯函数式编程语言"
+homepage: "https://www.haskell.org/"
+
+tags:
+  - haskell
+  - functional
+  - lazy
+  - types
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.haskell.org/ for installation instructions
+
+verify_commands:
+  - "haskell --version"
+
+compatible_with: []

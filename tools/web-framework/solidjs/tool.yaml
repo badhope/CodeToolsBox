@@ -1,0 +1,29 @@
+# Solidjs - SolidJS - 声明式响应式UI库
+name: solidjs
+category: web-framework
+description: "SolidJS - 声明式响应式UI库"
+homepage: "https://www.solidjs.com/"
+
+tags:
+  - solidjs
+  - reactive
+  - frontend
+  - performance
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.solidjs.com/ for installation instructions
+
+verify_commands:
+  - "solidjs --version"
+
+compatible_with: []

@@ -1,0 +1,30 @@
+# Playwright - Playwright - 跨浏览器测试
+name: playwright
+category: testing
+description: "Playwright - 跨浏览器测试"
+homepage: "https://playwright.dev/"
+
+tags:
+  - playwright
+  - testing
+  - browser
+  - automation
+  - microsoft
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://playwright.dev/ for installation instructions
+
+verify_commands:
+  - "playwright --version"
+
+compatible_with: []

@@ -1,0 +1,30 @@
+# Graphql - GraphQL - API查询语言
+name: graphql
+category: web-framework
+description: "GraphQL - API查询语言"
+homepage: "https://graphql.org/"
+
+tags:
+  - graphql
+  - api
+  - query
+  - types
+  - schema
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://graphql.org/ for installation instructions
+
+verify_commands:
+  - "graphql --version"
+
+compatible_with: []

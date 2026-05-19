@@ -1,0 +1,30 @@
+# Argocd - ArgoCD - GitOps持续交付
+name: argocd
+category: devops
+description: "ArgoCD - GitOps持续交付"
+homepage: "https://argoproj.github.io/cd/"
+
+tags:
+  - argocd
+  - gitops
+  - kubernetes
+  - cd
+  - declarative
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://argoproj.github.io/cd/ for installation instructions
+
+verify_commands:
+  - "argocd --version"
+
+compatible_with: []

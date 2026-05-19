@@ -1,0 +1,70 @@
+# Kotlin Programming Language
+name: kotlin
+category: programming-language
+description: "Kotlin - 现代化JVM编程语言"
+version: "1.9"
+latest_version: "1.9"
+homepage: "https://kotlinlang.org/"
+documentation: "https://kotlinlang.org/docs/home.html"
+license: "Apache 2.0"
+author: "JetBrains"
+
+tags:
+  - kotlin
+  - jvm
+  - android
+  - backend
+  - mobile
+  - jetbrains
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: sdkman
+    os: [all]
+    description: "SDKMAN (Recommended)"
+    priority: 1
+    command: |
+      curl -s "https://get.sdkman.io" | bash
+      source "$HOME/.sdkman/bin/sdkman-init.sh"
+      sdk install kotlin
+
+  - type: apt
+    os: [linux]
+    package_name: kotlin
+    description: "APT installation"
+    priority: 2
+    command: |
+      sudo apt update
+      sudo apt install kotlin
+
+  - type: brew
+    os: [macos]
+    package_name: kotlin
+    description: "Homebrew"
+    priority: 1
+
+  - type: manual
+    os: [all]
+    url: "https://github.com/JetBrains/kotlin/releases"
+    description: "Manual download"
+    priority: 3
+
+optional_tools:
+  - name: intellij
+    description: "IntelliJ IDEA"
+    recommended: true
+  - name: gradle
+    description: "Gradle build tool"
+    recommended: true
+
+verify_commands:
+  - "kotlinc -version"
+
+compatible_with:
+  - java
+  - gradle
+  - maven

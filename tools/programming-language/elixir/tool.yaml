@@ -1,0 +1,30 @@
+# Elixir - Elixir - 函数式、并发编程语言
+name: elixir
+category: programming-language
+description: "Elixir - 函数式、并发编程语言"
+homepage: "https://elixir-lang.org/"
+
+tags:
+  - elixir
+  - erlang
+  - functional
+  - concurrency
+  - phoenix
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://elixir-lang.org/ for installation instructions
+
+verify_commands:
+  - "elixir --version"
+
+compatible_with: []

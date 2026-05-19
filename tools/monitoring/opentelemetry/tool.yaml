@@ -1,0 +1,30 @@
+# Opentelemetry - OpenTelemetry - 可观测性框架
+name: opentelemetry
+category: monitoring
+description: "OpenTelemetry - 可观测性框架"
+homepage: "https://opentelemetry.io/"
+
+tags:
+  - opentelemetry
+  - telemetry
+  - metrics
+  - traces
+  - logs
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://opentelemetry.io/ for installation instructions
+
+verify_commands:
+  - "opentelemetry --version"
+
+compatible_with: []

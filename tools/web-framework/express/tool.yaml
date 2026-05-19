@@ -1,0 +1,30 @@
+# Express - Express - Node.js Web框架
+name: express
+category: web-framework
+description: "Express - Node.js Web框架"
+homepage: "https://expressjs.com/"
+
+tags:
+  - express
+  - nodejs
+  - backend
+  - api
+  - rest
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://expressjs.com/ for installation instructions
+
+verify_commands:
+  - "express --version"
+
+compatible_with: []

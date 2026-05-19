@@ -1,0 +1,30 @@
+# Digitalocean - DigitalOcean - 云服务器
+name: digitalocean
+category: cloud-service
+description: "DigitalOcean - 云服务器"
+homepage: "https://www.digitalocean.com/"
+
+tags:
+  - digitalocean
+  - vps
+  - cloud
+  - droplets
+  - hosting
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.digitalocean.com/ for installation instructions
+
+verify_commands:
+  - "digitalocean --version"
+
+compatible_with: []

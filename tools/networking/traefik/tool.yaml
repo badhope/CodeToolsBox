@@ -1,0 +1,30 @@
+# Traefik - Traefik - 云原生反向代理
+name: traefik
+category: networking
+description: "Traefik - 云原生反向代理"
+homepage: "https://traefik.io/"
+
+tags:
+  - traefik
+  - reverse-proxy
+  - kubernetes
+  - docker
+  - cloud-native
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://traefik.io/ for installation instructions
+
+verify_commands:
+  - "traefik --version"
+
+compatible_with: []

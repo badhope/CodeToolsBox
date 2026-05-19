@@ -1,0 +1,30 @@
+# Postman - Postman - API开发协作平台
+name: postman
+category: api
+description: "Postman - API开发协作平台"
+homepage: "https://www.postman.com/"
+
+tags:
+  - postman
+  - api
+  - rest
+  - graphql
+  - testing
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.postman.com/ for installation instructions
+
+verify_commands:
+  - "postman --version"
+
+compatible_with: []

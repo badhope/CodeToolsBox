@@ -1,0 +1,29 @@
+# Astro - Astro - 内容驱动静态网站框架
+name: astro
+category: web-framework
+description: "Astro - 内容驱动静态网站框架"
+homepage: "https://astro.build/"
+
+tags:
+  - astro
+  - static
+  - islands
+  - performance
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://astro.build/ for installation instructions
+
+verify_commands:
+  - "astro --version"
+
+compatible_with: []

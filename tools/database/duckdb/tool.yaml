@@ -1,0 +1,30 @@
+# Duckdb - DuckDB - 嵌入式分析数据库
+name: duckdb
+category: database
+description: "DuckDB - 嵌入式分析数据库"
+homepage: "https://duckdb.org/"
+
+tags:
+  - duckdb
+  - embedded
+  - olap
+  - analytics
+  - sqlite-like
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://duckdb.org/ for installation instructions
+
+verify_commands:
+  - "duckdb --version"
+
+compatible_with: []

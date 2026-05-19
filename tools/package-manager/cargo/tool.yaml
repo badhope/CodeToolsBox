@@ -1,0 +1,30 @@
+# Cargo - Cargo - Rust包管理器和构建工具
+name: cargo
+category: package-manager
+description: "Cargo - Rust包管理器和构建工具"
+homepage: "https://doc.rust-lang.org/cargo/"
+
+tags:
+  - cargo
+  - rust
+  - package-manager
+  - build
+  - dependencies
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://doc.rust-lang.org/cargo/ for installation instructions
+
+verify_commands:
+  - "cargo --version"
+
+compatible_with: []

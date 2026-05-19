@@ -1,0 +1,29 @@
+# Zig - Zig - 低级编程语言
+name: zig
+category: programming-language
+description: "Zig - 低级编程语言"
+homepage: "https://ziglang.org/"
+
+tags:
+  - zig
+  - systems
+  - low-level
+  - performance
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://ziglang.org/ for installation instructions
+
+verify_commands:
+  - "zig --version"
+
+compatible_with: []

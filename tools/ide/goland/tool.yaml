@@ -1,0 +1,29 @@
+# Goland - GoLand - Go IDE
+name: goland
+category: ide
+description: "GoLand - Go IDE"
+homepage: "https://www.jetbrains.com/go/"
+
+tags:
+  - goland
+  - jetbrains
+  - go
+  - ide
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.jetbrains.com/go/ for installation instructions
+
+verify_commands:
+  - "goland --version"
+
+compatible_with: []

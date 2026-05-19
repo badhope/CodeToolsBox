@@ -1,0 +1,30 @@
+# Supabase - Supabase - 开源Firebase替代
+name: supabase
+category: database
+description: "Supabase - 开源Firebase替代"
+homepage: "https://supabase.com/"
+
+tags:
+  - supabase
+  - firebase
+  - postgres
+  - realtime
+  - auth
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://supabase.com/ for installation instructions
+
+verify_commands:
+  - "supabase --version"
+
+compatible_with: []

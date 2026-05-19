@@ -1,0 +1,30 @@
+# Sentry - Sentry - 应用错误追踪
+name: sentry
+category: monitoring
+description: "Sentry - 应用错误追踪"
+homepage: "https://sentry.io/"
+
+tags:
+  - sentry
+  - error-tracking
+  - monitoring
+  - debugging
+  - crash-reporting
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://sentry.io/ for installation instructions
+
+verify_commands:
+  - "sentry --version"
+
+compatible_with: []

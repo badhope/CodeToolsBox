@@ -1,0 +1,30 @@
+# Locust - Locust - Python负载测试
+name: locust
+category: testing
+description: "Locust - Python负载测试"
+homepage: "https://locust.io/"
+
+tags:
+  - locust
+  - load-testing
+  - python
+  - distributed
+  - performance
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://locust.io/ for installation instructions
+
+verify_commands:
+  - "locust --version"
+
+compatible_with: []

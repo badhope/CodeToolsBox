@@ -1,0 +1,29 @@
+# Fsharp - F# - .NET平台函数式编程语言
+name: fsharp
+category: programming-language
+description: "F# - .NET平台函数式编程语言"
+homepage: "https://fsharp.org/"
+
+tags:
+  - fsharp
+  - dotnet
+  - functional
+  - ocaml
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://fsharp.org/ for installation instructions
+
+verify_commands:
+  - "fsharp --version"
+
+compatible_with: []

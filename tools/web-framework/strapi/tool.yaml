@@ -1,0 +1,30 @@
+# Strapi - Strapi - 开源Headless CMS
+name: strapi
+category: web-framework
+description: "Strapi - 开源Headless CMS"
+homepage: "https://strapi.io/"
+
+tags:
+  - strapi
+  - cms
+  - headless
+  - api
+  - backend
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://strapi.io/ for installation instructions
+
+verify_commands:
+  - "strapi --version"
+
+compatible_with: []

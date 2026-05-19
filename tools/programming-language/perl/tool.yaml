@@ -1,0 +1,29 @@
+# Perl - Perl - 强大的文本处理语言
+name: perl
+category: programming-language
+description: "Perl - 强大的文本处理语言"
+homepage: "https://www.perl.org/"
+
+tags:
+  - perl
+  - text-processing
+  - scripting
+  - cgi
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.perl.org/ for installation instructions
+
+verify_commands:
+  - "perl --version"
+
+compatible_with: []

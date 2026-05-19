@@ -1,0 +1,30 @@
+# Poetry - Poetry - Python依赖管理
+name: poetry
+category: package-manager
+description: "Poetry - Python依赖管理"
+homepage: "https://python-poetry.org/"
+
+tags:
+  - poetry
+  - python
+  - dependencies
+  - packaging
+  - pyproject
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://python-poetry.org/ for installation instructions
+
+verify_commands:
+  - "poetry --version"
+
+compatible_with: []

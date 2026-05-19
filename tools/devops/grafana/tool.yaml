@@ -1,0 +1,30 @@
+# Grafana - Grafana - 可视化监控平台
+name: grafana
+category: devops
+description: "Grafana - 可视化监控平台"
+homepage: "https://grafana.com/"
+
+tags:
+  - grafana
+  - dashboard
+  - monitoring
+  - visualization
+  - metrics
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://grafana.com/ for installation instructions
+
+verify_commands:
+  - "grafana --version"
+
+compatible_with: []

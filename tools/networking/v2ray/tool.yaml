@@ -1,0 +1,30 @@
+# V2Ray - V2Ray - 代理工具
+name: v2ray
+category: networking
+description: "V2Ray - 代理工具"
+homepage: "https://www.v2fly.org/"
+
+tags:
+  - v2ray
+  - proxy
+  - vpn
+  - shadowsocks
+  - trojan
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.v2fly.org/ for installation instructions
+
+verify_commands:
+  - "v2ray --version"
+
+compatible_with: []

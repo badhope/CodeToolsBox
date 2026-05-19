@@ -1,0 +1,30 @@
+# Jenkins - Jenkins - 自动化服务器
+name: jenkins
+category: devops
+description: "Jenkins - 自动化服务器"
+homepage: "https://www.jenkins.io/"
+
+tags:
+  - jenkins
+  - ci-cd
+  - automation
+  - pipeline
+  - java
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.jenkins.io/ for installation instructions
+
+verify_commands:
+  - "jenkins --version"
+
+compatible_with: []

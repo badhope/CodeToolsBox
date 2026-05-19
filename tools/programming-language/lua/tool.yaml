@@ -1,0 +1,29 @@
+# Lua - Lua - 轻量级脚本语言
+name: lua
+category: programming-language
+description: "Lua - 轻量级脚本语言"
+homepage: "https://www.lua.org/"
+
+tags:
+  - lua
+  - scripting
+  - embedded
+  - game
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.lua.org/ for installation instructions
+
+verify_commands:
+  - "lua --version"
+
+compatible_with: []

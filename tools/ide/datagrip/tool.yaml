@@ -1,0 +1,30 @@
+# Datagrip - DataGrip - 数据库IDE
+name: datagrip
+category: ide
+description: "DataGrip - 数据库IDE"
+homepage: "https://www.jetbrains.com/datagrip/"
+
+tags:
+  - datagrip
+  - jetbrains
+  - database
+  - sql
+  - ide
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.jetbrains.com/datagrip/ for installation instructions
+
+verify_commands:
+  - "datagrip --version"
+
+compatible_with: []

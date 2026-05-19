@@ -1,0 +1,30 @@
+# Pycharm - PyCharm - Python IDE
+name: pycharm
+category: ide
+description: "PyCharm - Python IDE"
+homepage: "https://www.jetbrains.com/pycharm/"
+
+tags:
+  - pycharm
+  - jetbrains
+  - python
+  - ide
+  - data-science
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.jetbrains.com/pycharm/ for installation instructions
+
+verify_commands:
+  - "pycharm --version"
+
+compatible_with: []

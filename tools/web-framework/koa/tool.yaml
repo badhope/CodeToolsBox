@@ -1,0 +1,29 @@
+# Koa - Koa - Node.js下一代Web框架
+name: koa
+category: web-framework
+description: "Koa - Node.js下一代Web框架"
+homepage: "https://koajs.com/"
+
+tags:
+  - koa
+  - nodejs
+  - middleware
+  - backend
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://koajs.com/ for installation instructions
+
+verify_commands:
+  - "koa --version"
+
+compatible_with: []

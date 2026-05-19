@@ -1,0 +1,30 @@
+# Prometheus - Prometheus - 监控系统
+name: prometheus
+category: devops
+description: "Prometheus - 监控系统"
+homepage: "https://prometheus.io/"
+
+tags:
+  - prometheus
+  - monitoring
+  - metrics
+  - alerting
+  - time-series
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://prometheus.io/ for installation instructions
+
+verify_commands:
+  - "prometheus --version"
+
+compatible_with: []

@@ -1,0 +1,30 @@
+# Cypress - Cypress - 前端E2E测试
+name: cypress
+category: testing
+description: "Cypress - 前端E2E测试"
+homepage: "https://www.cypress.io/"
+
+tags:
+  - cypress
+  - e2e
+  - testing
+  - frontend
+  - javascript
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.cypress.io/ for installation instructions
+
+verify_commands:
+  - "cypress --version"
+
+compatible_with: []

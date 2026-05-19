@@ -1,0 +1,30 @@
+# Github-Cli - GitHub CLI
+name: github-cli
+category: version-control
+description: "GitHub CLI"
+homepage: "https://cli.github.com/"
+
+tags:
+  - github
+  - cli
+  - git
+  - automation
+  - pull-request
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://cli.github.com/ for installation instructions
+
+verify_commands:
+  - "github-cli --version"
+
+compatible_with: []

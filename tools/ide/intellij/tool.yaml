@@ -1,0 +1,30 @@
+# Intellij - IntelliJ IDEA - Java/Kotlin IDE
+name: intellij
+category: ide
+description: "IntelliJ IDEA - Java/Kotlin IDE"
+homepage: "https://www.jetbrains.com/idea/"
+
+tags:
+  - intellij
+  - jetbrains
+  - java
+  - kotlin
+  - ide
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.jetbrains.com/idea/ for installation instructions
+
+verify_commands:
+  - "intellij --version"
+
+compatible_with: []

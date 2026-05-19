@@ -1,0 +1,30 @@
+# Keycloak - Keycloak - 身份和访问管理
+name: keycloak
+category: security
+description: "Keycloak - 身份和访问管理"
+homepage: "https://www.keycloak.org/"
+
+tags:
+  - keycloak
+  - iam
+  - sso
+  - oauth
+  - openid
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.keycloak.org/ for installation instructions
+
+verify_commands:
+  - "keycloak --version"
+
+compatible_with: []

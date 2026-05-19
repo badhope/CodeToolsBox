@@ -1,0 +1,30 @@
+# Influxdb - InfluxDB - 时序数据库
+name: influxdb
+category: database
+description: "InfluxDB - 时序数据库"
+homepage: "https://www.influxdata.com/"
+
+tags:
+  - influxdb
+  - time-series
+  - iot
+  - metrics
+  - monitoring
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.influxdata.com/ for installation instructions
+
+verify_commands:
+  - "influxdb --version"
+
+compatible_with: []

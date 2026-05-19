@@ -1,0 +1,60 @@
+# Swift Programming Language
+name: swift
+category: programming-language
+description: "Swift - Apple的现代化编程语言"
+version: "5.9"
+latest_version: "5.9"
+homepage: "https://swift.org/"
+documentation: "https://docs.swift.org/"
+license: "Apache 2.0"
+author: "Apple"
+
+tags:
+  - swift
+  - apple
+  - ios
+  - macos
+  - backend
+  - server-side-swift
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: swift-org
+    os: [linux, macos]
+    description: "Swift.org official"
+    priority: 1
+    command: |
+      # Linux
+      wget https://download.swift.org/swift-5.9.2-release/ubuntu2204/swift-5.9.2-RELEASE ubuntu2204.tar.gz
+      tar xzf swift-5.9.2-RELEASE-ubuntu22.04.tar.gz
+      # macOS use Xcode from App Store
+
+  - type: xcode
+    os: [macos]
+    description: "Xcode from App Store"
+    priority: 1
+
+  - type: apt
+    os: [linux]
+    package_name: swift
+    description: "APT (Ubuntu)"
+    priority: 2
+
+optional_tools:
+  - name: vapor
+    description: "Vapor web framework"
+    recommended: false
+  - name: xcode
+    description: "Xcode IDE"
+    recommended: true
+
+verify_commands:
+  - "swift --version"
+
+compatible_with:
+  - xcode
+  - vapor

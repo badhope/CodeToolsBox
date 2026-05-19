@@ -1,0 +1,72 @@
+# Scala Programming Language
+name: scala
+category: programming-language
+description: "Scala - 融合面向对象和函数式编程的JVM语言"
+version: "3.3"
+latest_version: "3.3"
+homepage: "https://scala-lang.org/"
+documentation: "https://docs.scala-lang.org/"
+license: "Apache 2.0"
+author: "EPFL / Lightbend"
+
+tags:
+  - scala
+  - jvm
+  - functional-programming
+  - big-data
+  - spark
+  - akka
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: coursier
+    os: [all]
+    description: "Coursier (Recommended)"
+    priority: 1
+    command: |
+      curl -fL "https://github.com/coursier/launchers/raw/master/cs-x86_64-pc-linux.gz" | gzip -d > cs && chmod +x cs && ./cs setup
+
+  - type: apt
+    os: [linux]
+    package_name: scala scala-doc
+    description: "APT installation"
+    priority: 2
+
+  - type: sdkman
+    os: [all]
+    description: "SDKMAN"
+    priority: 1
+    command: |
+      curl -s "https://get.sdkman.io" | bash
+      source "$HOME/.sdkman/bin/sdkman-init.sh"
+      sdk install scala
+
+  - type: manual
+    os: [all]
+    url: "https://scala-lang.org/download/"
+    description: "Manual download"
+    priority: 3
+
+optional_tools:
+  - name: sbt
+    description: "Scala build tool"
+    recommended: true
+  - name: ammonite
+    description: "Advanced REPL"
+    recommended: false
+
+environment_vars:
+  SCALA_HOME: "$HOME/.local/share/coursier"
+
+verify_commands:
+  - "scala --version"
+  - "scalac --version"
+
+compatible_with:
+  - java
+  - spark
+  - sbt

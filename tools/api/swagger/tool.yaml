@@ -1,0 +1,30 @@
+# Swagger - Swagger/OpenAPI - API文档工具
+name: swagger
+category: api
+description: "Swagger/OpenAPI - API文档工具"
+homepage: "https://swagger.io/"
+
+tags:
+  - swagger
+  - openapi
+  - api
+  - documentation
+  - rest
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://swagger.io/ for installation instructions
+
+verify_commands:
+  - "swagger --version"
+
+compatible_with: []

@@ -1,0 +1,30 @@
+# Neo4J - Neo4j - 图数据库
+name: neo4j
+category: database
+description: "Neo4j - 图数据库"
+homepage: "https://neo4j.com/"
+
+tags:
+  - neo4j
+  - graph
+  - nosql
+  - cypher
+  - relationships
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://neo4j.com/ for installation instructions
+
+verify_commands:
+  - "neo4j --version"
+
+compatible_with: []

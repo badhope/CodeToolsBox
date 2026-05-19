@@ -1,0 +1,29 @@
+# Svelte - Svelte - 编译型UI框架
+name: svelte
+category: web-framework
+description: "Svelte - 编译型UI框架"
+homepage: "https://svelte.dev/"
+
+tags:
+  - svelte
+  - frontend
+  - compile-time
+  - reactive
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://svelte.dev/ for installation instructions
+
+verify_commands:
+  - "svelte --version"
+
+compatible_with: []

@@ -1,0 +1,30 @@
+# Mariadb - MariaDB - MySQL兼容数据库
+name: mariadb
+category: database
+description: "MariaDB - MySQL兼容数据库"
+homepage: "https://mariadb.org/"
+
+tags:
+  - mariadb
+  - mysql
+  - database
+  - sql
+  - galera
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://mariadb.org/ for installation instructions
+
+verify_commands:
+  - "mariadb --version"
+
+compatible_with: []

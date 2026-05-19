@@ -1,0 +1,30 @@
+# Gitlab - GitLab - DevOps平台
+name: gitlab
+category: devops
+description: "GitLab - DevOps平台"
+homepage: "https://about.gitlab.com/"
+
+tags:
+  - gitlab
+  - ci-cd
+  - devops
+  - git
+  - repository
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://about.gitlab.com/ for installation instructions
+
+verify_commands:
+  - "gitlab --version"
+
+compatible_with: []

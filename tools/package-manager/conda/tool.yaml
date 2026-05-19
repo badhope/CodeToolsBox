@@ -1,0 +1,30 @@
+# Conda - Conda - 环境管理器和包管理器
+name: conda
+category: package-manager
+description: "Conda - 环境管理器和包管理器"
+homepage: "https://docs.conda.io/"
+
+tags:
+  - conda
+  - python
+  - environment
+  - package-manager
+  - data-science
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://docs.conda.io/ for installation instructions
+
+verify_commands:
+  - "conda --version"
+
+compatible_with: []

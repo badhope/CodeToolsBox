@@ -1,0 +1,30 @@
+# Trivy - Trivy - 容器安全扫描
+name: trivy
+category: security
+description: "Trivy - 容器安全扫描"
+homepage: "https://trivy.dev/"
+
+tags:
+  - trivy
+  - security
+  - vulnerability
+  - container
+  - scanning
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://trivy.dev/ for installation instructions
+
+verify_commands:
+  - "trivy --version"
+
+compatible_with: []

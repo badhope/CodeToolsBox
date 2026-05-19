@@ -1,0 +1,29 @@
+# Nim - Nim - 高效简洁的编译型语言
+name: nim
+category: programming-language
+description: "Nim - 高效简洁的编译型语言"
+homepage: "https://nim-lang.org/"
+
+tags:
+  - nim
+  - metaprogramming
+  - high-performance
+  -  compiles-to-c
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://nim-lang.org/ for installation instructions
+
+verify_commands:
+  - "nim --version"
+
+compatible_with: []

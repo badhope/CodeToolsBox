@@ -1,0 +1,30 @@
+# Selenium - Selenium - Web自动化测试
+name: selenium
+category: testing
+description: "Selenium - Web自动化测试"
+homepage: "https://www.selenium.dev/"
+
+tags:
+  - selenium
+  - automation
+  - testing
+  - webdriver
+  - browser
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.selenium.dev/ for installation instructions
+
+verify_commands:
+  - "selenium --version"
+
+compatible_with: []

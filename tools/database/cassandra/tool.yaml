@@ -1,0 +1,30 @@
+# Cassandra - Apache Cassandra - NoSQL分布式数据库
+name: cassandra
+category: database
+description: "Apache Cassandra - NoSQL分布式数据库"
+homepage: "https://cassandra.apache.org/"
+
+tags:
+  - cassandra
+  - nosql
+  - distributed
+  - scalable
+  - wide-column
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://cassandra.apache.org/ for installation instructions
+
+verify_commands:
+  - "cassandra --version"
+
+compatible_with: []

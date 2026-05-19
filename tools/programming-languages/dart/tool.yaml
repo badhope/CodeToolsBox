@@ -1,0 +1,55 @@
+# Dart Programming Language
+name: dart
+category: programming-language
+description: "Dart - Google的面向对象编程语言"
+version: "3.2"
+latest_version: "3.2"
+homepage: "https://dart.dev/"
+documentation: "https://dart.dev/guides"
+license: "BSD"
+author: "Google"
+
+tags:
+  - dart
+  - flutter
+  - google
+  - mobile
+  - frontend
+  - backend
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: dart-sdk
+    os: [all]
+    description: "Dart SDK (Recommended)"
+    priority: 1
+    command: |
+      apt-get update && apt-get install -y apt-transport-https
+      wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | gpg --dearmor -o /usr/share/keyrings/dart.gpg
+      echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | tee /etc/apt/sources.list.d/dart_stable.list
+      apt-get update && apt-get install -y dart
+
+  - type: brew
+    os: [macos]
+    package_name: dart
+    description: "Homebrew"
+    priority: 1
+
+  - type: flutter
+    os: [all]
+    description: "Flutter SDK (includes Dart)"
+    priority: 1
+    command: |
+      # Download Flutter SDK which includes Dart
+
+verify_commands:
+  - "dart --version"
+
+compatible_with:
+  - flutter
+  - angular
+  - pub

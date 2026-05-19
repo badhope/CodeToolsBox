@@ -1,0 +1,30 @@
+# Nestjs - NestJS - Node.js渐进式框架
+name: nestjs
+category: web-framework
+description: "NestJS - Node.js渐进式框架"
+homepage: "https://nestjs.com/"
+
+tags:
+  - nestjs
+  - nodejs
+  - typescript
+  - backend
+  - angular-like
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://nestjs.com/ for installation instructions
+
+verify_commands:
+  - "nestjs --version"
+
+compatible_with: []

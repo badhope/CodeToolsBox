@@ -1,0 +1,30 @@
+# Vault - HashiCorp Vault - 密钥管理
+name: vault
+category: security
+description: "HashiCorp Vault - 密钥管理"
+homepage: "https://www.vaultproject.io/"
+
+tags:
+  - vault
+  - secrets
+  - encryption
+  - iam
+  - security
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.vaultproject.io/ for installation instructions
+
+verify_commands:
+  - "vault --version"
+
+compatible_with: []

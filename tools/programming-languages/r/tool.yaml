@@ -1,0 +1,62 @@
+# R Programming Language
+name: r
+category: programming-language
+description: "R - 统计计算和图形编程语言"
+version: "4.3"
+latest_version: "4.3"
+homepage: "https://www.r-project.org/"
+documentation: "https://cran.r-project.org/manuals.html"
+license: "GPL 2/3"
+author: "R Core Team"
+
+tags:
+  - r
+  - statistics
+  - data-science
+  - machine-learning
+  - visualization
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: r-base r-base-dev
+    description: "APT installation (Recommended)"
+    priority: 1
+    command: |
+      apt update && apt install -y r-base r-base-dev
+
+  - type: cran
+    os: [linux]
+    description: "CRAN repository"
+    priority: 1
+    command: |
+      # Add CRAN repository
+      apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+      add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu focal-cran40/'
+      apt update && apt install -y r-base r-base-dev
+
+  - type: brew
+    os: [macos]
+    package_name: r
+    description: "Homebrew"
+    priority: 1
+
+optional_tools:
+  - name: rstudio
+    description: "RStudio IDE"
+    recommended: true
+  - name: r-essentials
+    description: "RStudio Server"
+    recommended: false
+
+verify_commands:
+  - "R --version"
+
+compatible_with:
+  - rstudio
+  - jupyter

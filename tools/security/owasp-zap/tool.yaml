@@ -1,0 +1,30 @@
+# Owasp-Zap - OWASP ZAP - Web应用安全扫描
+name: owasp-zap
+category: security
+description: "OWASP ZAP - Web应用安全扫描"
+homepage: "https://www.zaproxy.org/"
+
+tags:
+  - owasp
+  - zap
+  - security
+  - pentest
+  - vulnerability
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://www.zaproxy.org/ for installation instructions
+
+verify_commands:
+  - "owasp-zap --version"
+
+compatible_with: []

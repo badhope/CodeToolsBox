@@ -1,0 +1,29 @@
+# Remix - Remix - 全栈Web框架
+name: remix
+category: web-framework
+description: "Remix - 全栈Web框架"
+homepage: "https://remix.run/"
+
+tags:
+  - remix
+  - react
+  - fullstack
+  - ssr
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://remix.run/ for installation instructions
+
+verify_commands:
+  - "remix --version"
+
+compatible_with: []

@@ -1,0 +1,30 @@
+# Nginx - Nginx - Web服务器和反向代理
+name: nginx
+category: networking
+description: "Nginx - Web服务器和反向代理"
+homepage: "https://nginx.org/"
+
+tags:
+  - nginx
+  - web-server
+  - reverse-proxy
+  - load-balancer
+  - http
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: official
+    os: [all]
+    description: "Official installation"
+    priority: 1
+    command: |
+      # See https://nginx.org/ for installation instructions
+
+verify_commands:
+  - "nginx --version"
+
+compatible_with: []
