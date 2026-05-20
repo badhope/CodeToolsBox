@@ -1,8 +1,13 @@
-# Nginx - Nginx - Web服务器和反向代理
+# Nginx
 name: nginx
 category: networking
-description: "Nginx - Web服务器和反向代理"
+description: "Nginx - High performance web server, reverse proxy, and load balancer"
+version: "1.25"
+latest_version: "1.25"
 homepage: "https://nginx.org/"
+documentation: "https://nginx.org/en/docs/"
+license: "BSD 2-Clause"
+author: "Nginx, Inc."
 
 tags:
   - nginx
@@ -10,6 +15,7 @@ tags:
   - reverse-proxy
   - load-balancer
   - http
+  - https
 
 supported_os:
   - linux
@@ -17,14 +23,40 @@ supported_os:
   - windows
 
 installation_sources:
-  - type: official
-    os: [all]
-    description: "Official installation"
+  - type: apt
+    os: [linux]
+    package_name: nginx
+    description: "Apt repository"
     priority: 1
     command: |
-      # See https://nginx.org/ for installation instructions
+      apt update && apt install -y nginx
+
+  - type: homebrew
+    os: [macos]
+    package_name: nginx
+    description: "Homebrew"
+    priority: 1
+
+  - type: docker
+    os: [all]
+    description: "Docker"
+    priority: 2
+    command: |
+      docker run -d -p 80:80 -p 443:443 --name nginx nginx
+
+optional_tools:
+  - name: certbot
+    description: "Certbot for Let's Encrypt"
+    recommended: true
+  - name: openssl
+    description: "OpenSSL"
+    recommended: true
 
 verify_commands:
-  - "nginx --version"
+  - "nginx -v"
+  - "nginx -t"
 
-compatible_with: []
+compatible_with:
+  - docker
+  - certbot
+  - letsencrypt

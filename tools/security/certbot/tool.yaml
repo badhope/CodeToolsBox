@@ -1,0 +1,66 @@
+# Certbot
+name: certbot
+category: security
+description: "Certbot - Let's Encrypt client for automated HTTPS certificate management"
+version: "2.9"
+latest_version: "2.9"
+homepage: "https://certbot.eff.org/"
+documentation: "https://certbot.eff.org/docs/"
+license: "Apache 2.0"
+author: "Electronic Frontier Foundation"
+
+tags:
+  - certbot
+  - letsencrypt
+  - ssl
+  - tls
+  - https
+  - certificates
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: apt
+    os: [linux]
+    package_name: certbot
+    description: "Apt repository"
+    priority: 1
+    command: |
+      apt update && apt install -y certbot
+
+  - type: apt
+    os: [linux]
+    package_name: python3-certbot-nginx
+    description: "Certbot Nginx plugin"
+    priority: 2
+
+  - type: apt
+    os: [linux]
+    package_name: python3-certbot-apache
+    description: "Certbot Apache plugin"
+    priority: 2
+
+  - type: pip
+    os: [all]
+    package_name: certbot
+    description: "Certbot via pip"
+    priority: 2
+
+optional_tools:
+  - name: nginx
+    description: "Nginx web server"
+    recommended: true
+  - name: apache
+    description: "Apache web server"
+    recommended: false
+
+verify_commands:
+  - "certbot --version"
+
+compatible_with:
+  - nginx
+  - apache
+  - letsencrypt

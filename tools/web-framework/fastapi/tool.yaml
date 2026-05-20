@@ -1,0 +1,66 @@
+# FastAPI
+name: fastapi
+category: web-framework
+description: "FastAPI - Modern, fast (high-performance), web framework for building APIs with Python 3.8+"
+version: "0.109"
+latest_version: "0.109"
+homepage: "https://fastapi.tiangolo.com/"
+documentation: "https://fastapi.tiangolo.com/"
+license: "MIT"
+author: "Sebastian Ramírez"
+
+tags:
+  - fastapi
+  - python
+  - web-framework
+  - api
+  - rest
+  - openapi
+  - async
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: pip
+    os: [all]
+    package_name: fastapi
+    description: "FastAPI"
+    priority: 1
+
+  - type: pip
+    os: [all]
+    package_name: fastapi[standard]
+    description: "FastAPI with extras"
+    priority: 2
+
+  - type: pip
+    os: [all]
+    package_name: fastapi uvicorn[standard]
+    description: "FastAPI + Uvicorn ASGI server"
+    priority: 1
+    command: |
+      pip install fastapi "uvicorn[standard]"
+
+optional_tools:
+  - name: uvicorn
+    description: "ASGI server"
+    recommended: true
+  - name: sqlalchemy
+    description: "SQLAlchemy"
+    recommended: false
+  - name: alembic
+    description: "Alembic"
+    recommended: false
+
+verify_commands:
+  - "python3 -c \"import fastapi; print(fastapi.__version__)\""
+
+compatible_with:
+  - python
+  - uvicorn
+  - postgresql
+  - mongodb
+  - redis

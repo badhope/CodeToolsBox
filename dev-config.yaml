@@ -7,8 +7,8 @@ version_control:
   git:
     enabled: true
     files:
-      - config/git-config/.gitconfig
-      - config/git-config/.gitignore_global
+      - dev-config/templates/git/.gitconfig
+      - dev-config/templates/git/.gitignore_global
     commands:
       - "git config --global user.name 'Your Name'"
       - "git config --global user.email 'your.email@example.com'"
@@ -31,7 +31,7 @@ shell:
   # Bash configuration
   bash:
     enabled: true
-    file: config/shell-config/.bashrc
+    file: dev-config/templates/shell/.bashrc
     aliases:
       ll: ls -la
       la: ls -A
@@ -82,7 +82,8 @@ ide:
   # VS Code configuration
   vscode:
     enabled: true
-    extensions: config/vscode-extensions/extensions.json
+    extensions: dev-config/templates/ide/vscode/extensions.json
+    settings: dev-config/templates/ide/vscode/settings.json
     settings:
       editor.tabSize: 2
       editor.fontSize: 14
@@ -113,18 +114,21 @@ ide:
 package_managers:
   # npm/yarn/pnpm
   npm:
+    config: dev-config/templates/package-manager/npm/.npmrc
     registry: "https://registry.npmmirror.com"
     cache: "$HOME/.npm"
     prefix: "$HOME/.npm-global"
 
   # pip
   pip:
+    config: dev-config/templates/package-manager/pip/pip.conf
     index_url: "https://pypi.tuna.tsinghua.edu.cn/simple"
     trusted_host: "pypi.tuna.tsinghua.edu.cn"
     no_cache_dir: false
 
   # cargo
   cargo:
+    config: dev-config/templates/package-manager/cargo/config
     registry: "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
     cache: "$HOME/.cargo/registry"
 
@@ -146,6 +150,11 @@ docker:
   storage:
     driver: overlay2
     data_root: "/var/lib/docker"
+  # Docker Compose templates
+  compose_templates:
+    web: dev-config/templates/docker/docker-compose.web.yml
+    ai: dev-config/templates/docker/docker-compose.ai.yml
+    fullstack: dev-config/templates/docker/docker-compose.fullstack.yml
   # Default containers
   default_containers:
     - name: postgres
@@ -158,6 +167,8 @@ docker:
       image: redis:7
       ports:
         - 6379:6379
+  # Daemon config
+  daemon_config: dev-config/templates/docker/daemon.json
 
 # Environment variables
 env_vars:

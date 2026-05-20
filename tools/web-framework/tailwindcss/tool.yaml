@@ -1,0 +1,60 @@
+# Tailwind CSS
+name: tailwindcss
+category: web-framework
+description: "Tailwind CSS - Utility-first CSS framework for rapid UI development"
+version: "3.4"
+latest_version: "3.4"
+homepage: "https://tailwindcss.com/"
+documentation: "https://tailwindcss.com/docs"
+license: "MIT"
+author: "Tailwind Labs"
+
+tags:
+  - tailwindcss
+  - css
+  - frontend
+  - utility-first
+  - react
+  - vue
+  - nextjs
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: npm
+    os: [all]
+    package_name: tailwindcss
+    description: "Install Tailwind CSS"
+    priority: 1
+    command: |
+      npm install -D tailwindcss
+      npx tailwindcss init
+
+  - type: npm
+    os: [all]
+    package_name: tailwindcss-cli
+    description: "Tailwind CSS CLI"
+    priority: 2
+
+optional_tools:
+  - name: postcss
+    description: "PostCSS"
+    recommended: true
+  - name: autoprefixer
+    description: "Autoprefixer"
+    recommended: true
+
+verify_commands:
+  - "npx tailwindcss --version"
+
+compatible_with:
+  - javascript
+  - typescript
+  - react
+  - vue
+  - nextjs
+  - nuxt
+  - astro

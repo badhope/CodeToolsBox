@@ -1023,6 +1023,90 @@
       "compatible_with": [],
       "path": "tools/security/snyk/tool.yaml"
     },
+    "certbot": {
+      "name": "certbot",
+      "category": "certbot",
+      "description": "Certbot - Let's Encrypt client for automated HTTPS certificate management",
+      "version": "2.9",
+      "latest_version": "2.9",
+      "homepage": "https://certbot.eff.org/",
+      "documentation": "https://certbot.eff.org/docs/",
+      "license": "Apache 2.0",
+      "author": "Electronic Frontier Foundation",
+      "tags": [
+        "certbot",
+        "letsencrypt",
+        "ssl",
+        "tls",
+        "https",
+        "certificates"
+      ],
+      "supported_os": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "installation_sources": [
+        {
+          "type": "apt",
+          "os": [
+            "linux"
+          ],
+          "package_name": "certbot",
+          "description": "Apt repository",
+          "priority": 1,
+          "command": "apt update && apt install -y certbot\n"
+        },
+        {
+          "type": "apt",
+          "os": [
+            "linux"
+          ],
+          "package_name": "python3-certbot-nginx",
+          "description": "Certbot Nginx plugin",
+          "priority": 2
+        },
+        {
+          "type": "apt",
+          "os": [
+            "linux"
+          ],
+          "package_name": "python3-certbot-apache",
+          "description": "Certbot Apache plugin",
+          "priority": 2
+        },
+        {
+          "type": "pip",
+          "os": [
+            "all"
+          ],
+          "package_name": "certbot",
+          "description": "Certbot via pip",
+          "priority": 2
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "nginx",
+          "description": "Nginx web server",
+          "recommended": true
+        },
+        {
+          "name": "apache",
+          "description": "Apache web server",
+          "recommended": false
+        }
+      ],
+      "verify_commands": [
+        "certbot --version"
+      ],
+      "compatible_with": [
+        "nginx",
+        "apache",
+        "letsencrypt"
+      ],
+      "path": "tools/security/certbot/tool.yaml"
+    },
     "openssl": {
       "name": "openssl",
       "category": "openssl",
@@ -5230,6 +5314,77 @@
       "compatible_with": [],
       "path": "tools/web-framework/svelte/tool.yaml"
     },
+    "tailwindcss": {
+      "name": "tailwindcss",
+      "category": "tailwindcss",
+      "description": "Tailwind CSS - Utility-first CSS framework for rapid UI development",
+      "version": "3.4",
+      "latest_version": "3.4",
+      "homepage": "https://tailwindcss.com/",
+      "documentation": "https://tailwindcss.com/docs",
+      "license": "MIT",
+      "author": "Tailwind Labs",
+      "tags": [
+        "tailwindcss",
+        "css",
+        "frontend",
+        "utility-first",
+        "react",
+        "vue",
+        "nextjs"
+      ],
+      "supported_os": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "installation_sources": [
+        {
+          "type": "npm",
+          "os": [
+            "all"
+          ],
+          "package_name": "tailwindcss",
+          "description": "Install Tailwind CSS",
+          "priority": 1,
+          "command": "npm install -D tailwindcss\nnpx tailwindcss init\n"
+        },
+        {
+          "type": "npm",
+          "os": [
+            "all"
+          ],
+          "package_name": "tailwindcss-cli",
+          "description": "Tailwind CSS CLI",
+          "priority": 2
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "postcss",
+          "description": "PostCSS",
+          "recommended": true
+        },
+        {
+          "name": "autoprefixer",
+          "description": "Autoprefixer",
+          "recommended": true
+        }
+      ],
+      "verify_commands": [
+        "npx tailwindcss --version"
+      ],
+      "compatible_with": [
+        "javascript",
+        "typescript",
+        "react",
+        "vue",
+        "nextjs",
+        "nuxt",
+        "astro"
+      ],
+      "path": "tools/web-framework/tailwindcss/tool.yaml"
+    },
     "koa": {
       "name": "koa",
       "category": "koa",
@@ -5295,6 +5450,147 @@
       ],
       "compatible_with": [],
       "path": "tools/web-framework/remix/tool.yaml"
+    },
+    "vite": {
+      "name": "vite",
+      "category": "vite",
+      "description": "Vite - Next Generation Frontend Tooling",
+      "version": "5.0",
+      "latest_version": "5.0",
+      "homepage": "https://vitejs.dev/",
+      "documentation": "https://vitejs.dev/guide/",
+      "license": "MIT",
+      "author": "Evan You",
+      "tags": [
+        "vite",
+        "frontend",
+        "build-tool",
+        "bundler",
+        "hmr",
+        "react",
+        "vue"
+      ],
+      "supported_os": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "installation_sources": [
+        {
+          "type": "npm",
+          "os": [
+            "all"
+          ],
+          "package_name": "vite",
+          "description": "Install Vite",
+          "priority": 1,
+          "command": "npm install -g vite\n"
+        },
+        {
+          "type": "npm",
+          "os": [
+            "all"
+          ],
+          "package_name": "create-vite@latest",
+          "description": "Create Vite project",
+          "priority": 1,
+          "command": "npm create vite@latest\n"
+        },
+        {
+          "type": "yarn",
+          "os": [
+            "all"
+          ],
+          "package_name": "create-vite@latest",
+          "description": "Yarn",
+          "priority": 2,
+          "command": "yarn create vite\n"
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "rollup",
+          "description": "Rollup bundler",
+          "recommended": false
+        }
+      ],
+      "verify_commands": [
+        "vite --version"
+      ],
+      "compatible_with": [
+        "javascript",
+        "typescript",
+        "react",
+        "vue",
+        "svelte",
+        "lit"
+      ],
+      "path": "tools/web-framework/vite/tool.yaml"
+    },
+    "fastapi": {
+      "name": "fastapi",
+      "category": "fastapi",
+      "description": "FastAPI - modern, fast web framework for building APIs",
+      "version": "0.104",
+      "latest_version": "0.104",
+      "homepage": "https://fastapi.tiangolo.com/",
+      "documentation": "https://fastapi.tiangolo.com/docs/",
+      "license": "MIT",
+      "author": "Sebastian Ramirez",
+      "tags": [
+        "fastapi",
+        "python",
+        "api",
+        "async",
+        "modern"
+      ],
+      "supported_os": [
+        "linux",
+        "macos",
+        "windows"
+      ],
+      "installation_sources": [
+        {
+          "type": "pip",
+          "os": [
+            "all"
+          ],
+          "package_name": "fastapi uvicorn",
+          "description": "pip installation",
+          "priority": 1
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "pydantic",
+          "description": "Data validation",
+          "recommended": true
+        },
+        {
+          "name": "sqlalchemy",
+          "description": "ORM",
+          "recommended": true
+        }
+      ],
+      "environment_vars": {
+        "PYTHONPATH": "."
+      },
+      "post_install": [
+        "python -c 'import fastapi; print(fastapi.__version__)'"
+      ],
+      "verify_commands": [
+        "python -c 'import fastapi; print(fastapi.__version__)'"
+      ],
+      "compatible_with": [
+        "python3",
+        "uvicorn",
+        "pydantic"
+      ],
+      "system_requirements": {
+        "disk_space": "200MB",
+        "memory": "512MB minimum"
+      },
+      "path": "tools/frameworks/fastapi/tool.yaml"
     },
     "express": {
       "name": "express",
@@ -7583,13 +7879,19 @@
     "docker-compose": {
       "name": "docker-compose",
       "category": "docker-compose",
-      "description": "Docker Compose - 容器编排工具",
+      "description": "Docker Compose - Define and run multi-container applications with Docker",
+      "version": "2.24",
+      "latest_version": "2.24",
       "homepage": "https://docs.docker.com/compose/",
+      "documentation": "https://docs.docker.com/compose/",
+      "license": "Apache 2.0",
+      "author": "Docker, Inc.",
       "tags": [
         "docker-compose",
+        "docker",
         "containers",
-        "orchestration",
-        "development"
+        "devops",
+        "orchestration"
       ],
       "supported_os": [
         "linux",
@@ -7598,19 +7900,62 @@
       ],
       "installation_sources": [
         {
-          "type": "official",
+          "type": "apt",
+          "os": [
+            "linux"
+          ],
+          "package_name": "docker-compose-plugin",
+          "description": "Docker Compose plugin for Docker Desktop",
+          "priority": 1
+        },
+        {
+          "type": "script",
+          "os": [
+            "linux"
+          ],
+          "description": "Docker Compose standalone",
+          "priority": 2,
+          "command": "curl -SL https://github.com/docker/compose/releases/download/v2.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose\nchmod +x /usr/local/bin/docker-compose\n"
+        },
+        {
+          "type": "homebrew",
+          "os": [
+            "macos"
+          ],
+          "package_name": "docker-compose",
+          "description": "Homebrew",
+          "priority": 1
+        },
+        {
+          "type": "docker",
           "os": [
             "all"
           ],
-          "description": "Official installation",
-          "priority": 1,
-          "command": "# See https://docs.docker.com/compose/ for installation instructions\n"
+          "description": "Docker Compose in Docker",
+          "priority": 3,
+          "command": "docker run --rm -v \"$PWD:/workdir\" -v \"/var/run/docker.sock:/var/run/docker.sock\" -w /workdir docker/compose:1.29.2\n"
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "docker",
+          "description": "Docker Engine",
+          "recommended": true
+        },
+        {
+          "name": "docker-registry",
+          "description": "Docker Registry",
+          "recommended": false
         }
       ],
       "verify_commands": [
-        "docker-compose --version"
+        "docker compose version",
+        "docker-compose version"
       ],
-      "compatible_with": [],
+      "compatible_with": [
+        "docker",
+        "kubernetes"
+      ],
       "path": "tools/devops/docker-compose/tool.yaml"
     },
     "podman": {
@@ -8052,71 +8397,6 @@
         "memory": "1GB minimum"
       },
       "path": "tools/frameworks/django/tool.yaml"
-    },
-    "fastapi": {
-      "name": "fastapi",
-      "category": "fastapi",
-      "description": "FastAPI - modern, fast web framework for building APIs",
-      "version": "0.104",
-      "latest_version": "0.104",
-      "homepage": "https://fastapi.tiangolo.com/",
-      "documentation": "https://fastapi.tiangolo.com/docs/",
-      "license": "MIT",
-      "author": "Sebastian Ramirez",
-      "tags": [
-        "fastapi",
-        "python",
-        "api",
-        "async",
-        "modern"
-      ],
-      "supported_os": [
-        "linux",
-        "macos",
-        "windows"
-      ],
-      "installation_sources": [
-        {
-          "type": "pip",
-          "os": [
-            "all"
-          ],
-          "package_name": "fastapi uvicorn",
-          "description": "pip installation",
-          "priority": 1
-        }
-      ],
-      "optional_tools": [
-        {
-          "name": "pydantic",
-          "description": "Data validation",
-          "recommended": true
-        },
-        {
-          "name": "sqlalchemy",
-          "description": "ORM",
-          "recommended": true
-        }
-      ],
-      "environment_vars": {
-        "PYTHONPATH": "."
-      },
-      "post_install": [
-        "python -c 'import fastapi; print(fastapi.__version__)'"
-      ],
-      "verify_commands": [
-        "python -c 'import fastapi; print(fastapi.__version__)'"
-      ],
-      "compatible_with": [
-        "python3",
-        "uvicorn",
-        "pydantic"
-      ],
-      "system_requirements": {
-        "disk_space": "200MB",
-        "memory": "512MB minimum"
-      },
-      "path": "tools/frameworks/fastapi/tool.yaml"
     },
     "vue": {
       "name": "vue",
@@ -9029,14 +9309,20 @@
     "nginx": {
       "name": "nginx",
       "category": "nginx",
-      "description": "Nginx - Web服务器和反向代理",
+      "description": "Nginx - High performance web server, reverse proxy, and load balancer",
+      "version": "1.25",
+      "latest_version": "1.25",
       "homepage": "https://nginx.org/",
+      "documentation": "https://nginx.org/en/docs/",
+      "license": "BSD 2-Clause",
+      "author": "Nginx, Inc.",
       "tags": [
         "nginx",
         "web-server",
         "reverse-proxy",
         "load-balancer",
-        "http"
+        "http",
+        "https"
       ],
       "supported_os": [
         "linux",
@@ -9045,19 +9331,55 @@
       ],
       "installation_sources": [
         {
-          "type": "official",
+          "type": "apt",
+          "os": [
+            "linux"
+          ],
+          "package_name": "nginx",
+          "description": "Apt repository",
+          "priority": 1,
+          "command": "apt update && apt install -y nginx\n"
+        },
+        {
+          "type": "homebrew",
+          "os": [
+            "macos"
+          ],
+          "package_name": "nginx",
+          "description": "Homebrew",
+          "priority": 1
+        },
+        {
+          "type": "docker",
           "os": [
             "all"
           ],
-          "description": "Official installation",
-          "priority": 1,
-          "command": "# See https://nginx.org/ for installation instructions\n"
+          "description": "Docker",
+          "priority": 2,
+          "command": "docker run -d -p 80:80 -p 443:443 --name nginx nginx\n"
+        }
+      ],
+      "optional_tools": [
+        {
+          "name": "certbot",
+          "description": "Certbot for Let's Encrypt",
+          "recommended": true
+        },
+        {
+          "name": "openssl",
+          "description": "OpenSSL",
+          "recommended": true
         }
       ],
       "verify_commands": [
-        "nginx --version"
+        "nginx -v",
+        "nginx -t"
       ],
-      "compatible_with": [],
+      "compatible_with": [
+        "docker",
+        "certbot",
+        "letsencrypt"
+      ],
       "path": "tools/networking/nginx/tool.yaml"
     },
     "traefik": {
@@ -11204,6 +11526,7 @@
     "caddy",
     "cargo",
     "cassandra",
+    "certbot",
     "chocolatey",
     "circleci",
     "clash",
@@ -11356,6 +11679,7 @@
     "svelte",
     "swagger",
     "swift",
+    "tailwindcss",
     "tensorflow",
     "terraform",
     "tidb",
@@ -11369,6 +11693,7 @@
     "v2ray",
     "vault",
     "vercel",
+    "vite",
     "vscode",
     "vue",
     "zig"
@@ -11907,5 +12232,5 @@
     }
   },
   "current_region": "global",
-  "export_time": "2026-05-20T00:35:13.495186"
+  "export_time": "2026-05-20T00:50:04.338151"
 }

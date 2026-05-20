@@ -1,0 +1,65 @@
+# Vite
+name: vite
+category: web-framework
+description: "Vite - Next Generation Frontend Tooling"
+version: "5.0"
+latest_version: "5.0"
+homepage: "https://vitejs.dev/"
+documentation: "https://vitejs.dev/guide/"
+license: "MIT"
+author: "Evan You"
+
+tags:
+  - vite
+  - frontend
+  - build-tool
+  - bundler
+  - hmr
+  - react
+  - vue
+
+supported_os:
+  - linux
+  - macos
+  - windows
+
+installation_sources:
+  - type: npm
+    os: [all]
+    package_name: vite
+    description: "Install Vite"
+    priority: 1
+    command: |
+      npm install -g vite
+
+  - type: npm
+    os: [all]
+    package_name: create-vite@latest
+    description: "Create Vite project"
+    priority: 1
+    command: |
+      npm create vite@latest
+
+  - type: yarn
+    os: [all]
+    package_name: create-vite@latest
+    description: "Yarn"
+    priority: 2
+    command: |
+      yarn create vite
+
+optional_tools:
+  - name: rollup
+    description: "Rollup bundler"
+    recommended: false
+
+verify_commands:
+  - "vite --version"
+
+compatible_with:
+  - javascript
+  - typescript
+  - react
+  - vue
+  - svelte
+  - lit

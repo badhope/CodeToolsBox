@@ -1,14 +1,20 @@
-# Docker-Compose - Docker Compose - 容器编排工具
+# Docker Compose
 name: docker-compose
 category: devops
-description: "Docker Compose - 容器编排工具"
+description: "Docker Compose - Define and run multi-container applications with Docker"
+version: "2.24"
+latest_version: "2.24"
 homepage: "https://docs.docker.com/compose/"
+documentation: "https://docs.docker.com/compose/"
+license: "Apache 2.0"
+author: "Docker, Inc."
 
 tags:
   - docker-compose
+  - docker
   - containers
+  - devops
   - orchestration
-  - development
 
 supported_os:
   - linux
@@ -16,14 +22,45 @@ supported_os:
   - windows
 
 installation_sources:
-  - type: official
-    os: [all]
-    description: "Official installation"
+  - type: apt
+    os: [linux]
+    package_name: docker-compose-plugin
+    description: "Docker Compose plugin for Docker Desktop"
     priority: 1
+
+  - type: script
+    os: [linux]
+    description: "Docker Compose standalone"
+    priority: 2
     command: |
-      # See https://docs.docker.com/compose/ for installation instructions
+      curl -SL https://github.com/docker/compose/releases/download/v2.24.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+      chmod +x /usr/local/bin/docker-compose
+
+  - type: homebrew
+    os: [macos]
+    package_name: docker-compose
+    description: "Homebrew"
+    priority: 1
+
+  - type: docker
+    os: [all]
+    description: "Docker Compose in Docker"
+    priority: 3
+    command: |
+      docker run --rm -v "$PWD:/workdir" -v "/var/run/docker.sock:/var/run/docker.sock" -w /workdir docker/compose:1.29.2
+
+optional_tools:
+  - name: docker
+    description: "Docker Engine"
+    recommended: true
+  - name: docker-registry
+    description: "Docker Registry"
+    recommended: false
 
 verify_commands:
-  - "docker-compose --version"
+  - "docker compose version"
+  - "docker-compose version"
 
-compatible_with: []
+compatible_with:
+  - docker
+  - kubernetes
